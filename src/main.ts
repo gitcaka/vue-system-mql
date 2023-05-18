@@ -8,12 +8,15 @@ import router from './router'
 import vuesticGlobalConfig from './services/vuestic-ui/global-config'
 import App from './App.vue'
 
+import BaiduMap from 'vue-baidu-map-3x'
+
 const app = createApp(App)
 
 app.use(stores)
 app.use(router)
 app.use(i18n)
 app.use(createVuestic({ config: vuesticGlobalConfig }))
+app.use(BaiduMap, { ak: '0HKOG2X2X9rW9MOdwlO5owKFDatvEgBt' })
 
 if (import.meta.env.VITE_APP_GTM_ENABLED) {
   app.use(

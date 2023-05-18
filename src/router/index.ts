@@ -10,7 +10,12 @@ import UIRoute from '../pages/admin/ui/route'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/:catchAll(.*)',
-    redirect: { name: 'dashboard' },
+    redirect: { name: 'login' },
+  },
+  {
+    name: 'main',
+    path: '/main',
+    component: () => import('../pages/main.vue'),
   },
   {
     name: 'admin',

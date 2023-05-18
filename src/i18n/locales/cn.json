@@ -1,25 +1,62 @@
 {
   "auth": {
     "agree": "我同意",
-    "createAccount": "创建账号",
-    "createNewAccount": "创建新账号",
-    "email": "电子邮箱",
+    "createAccount": "创建账户",
+    "createNewAccount": "创建新账户",
+    "email": "电子邮件",
     "login": "登录",
     "password": "密码",
-    "signUp": "注册",
-    "termsOfUse": "使用条款"
+    "recover_password": "找回密码",
+    "sign_up": "注册",
+    "keep_logged_in": "保持登录状态",
+    "termsOfUse": "使用条款",
+    "reset_password": "重置密码"
+  },
+  "rating": {
+    "singleIcon": "单个图标",
+    "twoIcons": "两个图标",
+    "large": "大型",
+    "numbers": "数字",
+    "halves": "半颗星",
+    "small": "小型"
+  },
+  "typography": {
+    "primary": "主要文本样式",
+    "secondary": "次要文本样式"
   },
   "buttons": {
-    "advanced": "图标、组、下拉菜单",
+    "advanced": "带图标的按钮",
+    "size": "按钮尺寸",
+    "tags": "按钮标签",
     "button": "按钮",
-    "colors": "颜色",
+    "buttonGroups": "按钮组",
+    "buttonsDropdown": "带下拉菜单的按钮",
+    "split": "拆分",
+    "splitTo": "拆分成",
+    "customIcon": "自定义图标",
+    "content": "内容",
+    "buttonToggles": "按钮开关",
+    "pagination": "分页",
+    "a-link": "打开EpicSpinners",
+    "router-link": "转到图表",
+    "colors": "按钮颜色",
     "disabled": "禁用",
-    "dropdown": "下拉菜单",
-    "hover": "悬停状态",
-    "main": "主按钮和辅助按钮",
-    "micro": "微型的",
+    "dropdown": "下拉",
+    "hover": "悬停",
+    "types": "按钮类型",
     "pressed": "按下",
-    "small": "小的"
+    "default": "默认",
+    "outline": "轮廓",
+    "flat": "平面",
+    "large": "大号",
+    "small": "小号",
+    "normal": "普通",
+    "success": "成功",
+    "info": "信息",
+    "danger": "危险",
+    "warning": "警告",
+    "gray": "灰色",
+    "dark": "深色"
   },
   "charts": {
     "horizontalBarChart": "横条图",
@@ -30,46 +67,139 @@
     "bubbleChart": "气泡图"
   },
   "collapse": {
-    "accordion": "Accordion",
-    "buttons": "按钮"
+    "basic": "基础折叠",
+    "collapseWithBackground": "带背景的折叠",
+    "collapseWithCustomHeader": "自定义标题的折叠",
+    "firstHeader": "展开此块",
+    "secondHeader": "另一个块",
+    "content": {
+      "title": "美好的事物",
+      "text": "有一种关于为人父母的感觉，它给我们一种历史感和深深根植的愿望，希望将我们发现的有关生活的美好事物传给下一代。"
+    }
+  },
+  "sliders": {
+    "slider": "滑块",
+    "range": "范围",
+    "simple": "简单",
+    "value": "值",
+    "label": "标签",
+    "labelPlusIcon": "标签+图标",
+    "pins": "标记",
+    "pinsAndValue": "标记和值",
+    "withInput": "带输入框",
+    "withIcons": "带图标"
+  },
+  "popovers": {
+    "popover": "弹出框",
+    "popoverStyle": "弹出框样式",
+    "popoverPlacement": "弹出框位置",
+    "minimalTooltip": "最小化工具提示",
+    "anotherOneTooltip": "另一个工具提示"
   },
   "dashboard": {
-    "success": "成功",
+    "versions": "版本",
+    "setupRemoteConnections": "设置远程连接",
+    "currentVisitors": "当前访客",
+    "charts": {
+      "trendyTrends": "趋势",
+      "showInMoreDetail": "查看更多细节",
+      "showInLessDetail": "查看较少细节",
+      "loadingSpeed": "加载速度",
+      "topContributors": "最佳贡献者",
+      "showNextFive": "显示下五个",
+      "commits": "提交"
+    },
+    "info": {
+      "componentRichTheme": "富组件主题",
+      "completedPullRequests": "已完成的拉取请求",
+      "users": "用户",
+      "points": "积分",
+      "units": "单位",
+      "exploreGallery": "浏览画廊",
+      "viewLibrary": "查看库",
+      "commits": "提交",
+      "components": "组件",
+      "teamMembers": "团队成员"
+    },
+    "table": {
+      "title": "超棒的表格",
+      "brief": "简要",
+      "detailed": "详细",
+      "resolve": "解决",
+      "resolved": "已解决"
+    },
+    "tabs": {
+      "overview": {
+        "title": "概览",
+        "built": "使用 Vue.js 框架构建",
+        "free": "免费向所有人提供",
+        "fresh": "新鲜清新的设计",
+        "mobile": "响应式设计并优化了移动设备",
+        "components": "拥有大量有用的组件",
+        "nojQuery": "完全不依赖 jQuery"
+      },
+      "billingAddress": {
+        "title": "账单地址",
+        "personalInfo": "个人信息",
+        "firstName": "名字和姓氏",
+        "email": "电子邮件",
+        "address": "地址",
+        "companyInfo": "公司信息",
+        "city": "城市",
+        "country": "国家",
+        "infiniteConnections": "无限连接",
+        "addConnection": "添加连接"
+      },
+      "bankDetails": {
+        "title": "银行详情",
+        "detailsFields": "详情字段",
+        "bankName": "银行名称",
+        "accountName": "账户名称",
+        "sortCode": "排序代码",
+        "accountNumber": "账户号码",
+        "notes": "备注",
+        "sendDetails": "发送详情"
+      }
+    },
+    "navigationLayout": "导航布局",
+    "topBarButton": "顶部栏",
+    "sideBarButton": "侧边栏",
     "successMessage": "您已成功阅读此重要通知。",
     "elements": "元素",
-    "teamMembers": "团队成员",
-    "versions": "版本"
+    "teamMembers": "团队成员"
   },
   "notificationsPage": {
-    "alerts": {
-      "title": "警报",
-      "success": "成功",
-      "successMessage": "您已成功阅读此重要警报消息。",
+    "notifications": {
+      "title": "通知",
+      "gray": "处理中",
+      "dark": "新标签",
+      "success": "已付款",
+      "successMessage": "您成功阅读了此重要的警报消息。",
       "info": "信息",
-      "infoMessage": "此警报需要您的注意，但这并不是特别重要。",
-      "warning": "警告",
-      "warningMessage": "最好检查一下，现在状态好像不太好。",
+      "infoMessage": "此警报需要您的注意，但并不是非常重要。",
+      "warning": "暂停",
+      "warningMessage": "最好检查一下自己，你看起来不太好。",
       "danger": "危险",
-      "dangerMessage": "请更改一些内容并尝试再次提交。"
+      "dangerMessage": "更改一些内容，然后再次尝试提交。"
     },
     "popovers": {
       "title": "工具提示和弹出框",
-      "popoverTitleLabel": "弹出框的标题",
-      "popoverTextLabel": "弹出框的内容",
-      "popoverIconLabel": "弹出框的图标（fontAwesome）",
+      "popoverTitleLabel": "弹出框标题",
+      "popoverTextLabel": "弹出框文本",
+      "popoverIconLabel": "弹出框图标 (fontawesome)",
       "showPopover": "显示弹出框",
-      "topTooltip": "上侧提示",
-      "rightTooltip": "右侧提示",
-      "leftTooltip": "左侧提示",
-      "bottomTooltip": "下侧提示"
+      "topTooltip": "顶部",
+      "rightTooltip": "右侧",
+      "leftTooltip": "左侧",
+      "bottomTooltip": "底部"
     },
     "toasts": {
-      "title": "提示框",
-      "textLabel": "提示文本",
-      "durationLabel": "持续时间（毫秒）",
-      "iconLabel": "图标（fontAwesome）",
-      "fullWidthLabel": "全宽",
-      "launchToast": "加载提示框"
+      "title": "消息提醒",
+      "textLabel": "文本",
+      "durationLabel": "持续时间 (毫秒)",
+      "iconLabel": "图标 (fontawesome)",
+      "fullWidthLabel": "全宽度",
+      "launchToast": "启动消息提醒"
     }
   },
   "forms": {
@@ -146,36 +276,53 @@
     "persian": "波斯语"
   },
   "menu": {
-    "auth": "授权",
+    "auth": "认证",
+    "rating": "评分",
     "buttons": "按钮",
     "charts": "图表",
     "colorPickers": "颜色选择器",
-    "collapse": "折叠器",
-    "timelines": "时间线",
-    "dashboard": "仪表板",
+    "collapses": "折叠",
+    "timelines": "时间轴",
+    "dashboard": "仪表盘",
     "formElements": "表单元素",
     "forms": "表单",
-    "mediumEditor": "Medium Editor",
+    "mediumEditor": "富文本编辑器",
     "grid": "网格",
     "icons": "图标",
     "cards": "卡片",
-    "spinners": "Spinners",
+    "spinners": "加载动画",
     "login": "登录",
     "maps": "地图",
     "pages": "页面",
-    "modals": "模态对话框",
+    "modals": "模态框",
     "notifications": "通知",
     "progressBars": "进度条",
     "signUp": "注册",
     "statistics": "统计",
+    "lists": "列表",
     "tables": "表格",
-    "tags": "标签",
-    "typography": "段落",
-    "uiElements": "UI 元素",
-    "treeView": "树视图",
+    "markupTables": "标记表格",
+    "dataTables": "数据表格",
+    "chips": "标签",
+    "tabs": "选项卡",
+    "typography": "排版",
+    "uiElements": "UI元素",
+    "treeView": "树形视图",
     "dateTimePickers": "日期时间选择器",
     "fileUpload": "文件上传",
-    "chat": "聊天"
+    "colors": "颜色",
+    "spacing": "间距",
+    "sliders": "滑块",
+    "popovers": "弹出框",
+    "chat": "聊天",
+    "maplibre-maps": "MapLibre地图",
+    "yandex-maps": "Yandex地图",
+    "leaflet-maps": "Leaflet地图",
+    "bubble-maps": "气泡地图",
+    "line-maps": "线性地图",
+    "login-singup": "登录/注册",
+    "404-pages": "404页面",
+    "faq": "常见问题"
   },
   "messages": {
     "all": "查看全部消息",
@@ -186,15 +333,20 @@
     "close": "关闭",
     "confirm": "确认",
     "large": "大型",
-    "largeTitle": "大型模态对话框",
+    "largeTitle": "大型模态框",
     "medium": "中型",
-    "mediumTitle": "中型模态对话框",
+    "mediumTitle": "中型模态框",
     "small": "小型",
-    "smallTitle": "小型模态对话框",
+    "smallTitle": "小型模态框",
     "static": "静态",
-    "staticMessage": "这是一个静态对话框，背景点击不会关闭它。",
-    "staticTitle": "静态对话框",
-    "title": "模态对话框"
+    "staticMessage": "这是一个静态模态框，背景或点击Esc键无法关闭它。",
+    "staticTitle": "静态模态框",
+    "title": "模态框",
+    "fullscreen": "全屏",
+    "titleOptions": "模态框选项",
+    "blurred": "模糊的叠加层",
+    "withAnchorSlot": "带锚点插槽",
+    "message": "有三种斑马：平原斑马、山地斑马和格雷维斑马。平原斑马和山地斑马属于亚属马斑马，而格雷维斑马是亚属长头马斑马的唯一物种。后者类似于驴，与之密切相关，而前两者更像马。所有三种斑马都属于马属，与其他现存的马科动物一起。"
   },
   "dropdown": {
     "default": "默认项",
@@ -226,6 +378,30 @@
     "removable": "可移除",
     "colored": "彩色的"
   },
+  "chips": {
+    "chips": {
+      "title": "标签",
+      "primary": "主要标签",
+      "secondary": "次要标签",
+      "success": "成功标签",
+      "info": "信息标签",
+      "danger": "危险标签",
+      "warning": "警告标签",
+      "gray": "灰色标签",
+      "dark": "深色标签"
+    },
+    "badges": {
+      "title": "徽章",
+      "primary": "主要徽章",
+      "secondary": "次要徽章",
+      "success": "成功徽章",
+      "info": "信息徽章",
+      "danger": "危险徽章",
+      "warning": "警告徽章",
+      "gray": "灰色徽章",
+      "dark": "深色徽章"
+    }
+  },
   "navbar": {
     "messageUs": "需要Web开发帮助吗？请联系我们。"
   },
@@ -252,22 +428,38 @@
   "progressBars": {
     "basic": "基本的",
     "basicVertical": "基本垂直",
-    "circle": "圆形",
     "colorFulTitle": "彩色条型",
     "thin": "窄型",
     "thinVertical": "垂直窄型",
     "thick": "宽型",
-    "title": "进度条"
+    "title": "进度条",
+    "circle": "圆形",
+    "horizontal": "水平",
+    "state": "状态",
+    "colors": "颜色"
+  },
+  "lists": {
+    "customers": "客户",
+    "recentMessages": "最近的消息",
+    "archieved": "已归档",
+    "starterKit": "入门套件",
+    "notifications": "通知",
+    "routerSupport": "路由支持"
   },
   "tables": {
     "basic": "基本表格",
     "styled": "颜色，图标，标签",
     "advanced": "搜索和分页",
+    "stripedHoverable": "条纹, 悬停",
     "headings": {
-      "city": "城市",
       "email": "电子邮箱",
       "name": "姓名",
-      "score": "分数"
+      "firstName": "姓",
+      "lastName": "名",
+      "status": "状态",
+      "city": "城市",
+      "score": "分数",
+      "country": "国家"
     },
     "dataTable": {
       "noDataAvailable": "无可用数据"
@@ -286,38 +478,76 @@
     "advanced": "高级"
   },
   "chat": {
-    "title": "聊天"
+    "title": "聊天",
+    "sendButton": "发送"
+  },
+  "spacingPlayground": {
+    "value": "值",
+    "margin": "外边距",
+    "padding": "内边距"
+  },
+  "spacing": {
+    "title": "间距"
   },
   "cards": {
     "cards": "卡片",
-    "fixed": "固定的",
-    "floating": "浮动的",
-    "contentText": "独特的斑马条纹使它们成为人们最熟悉的动物之一。",
+    "fixed": "固定式",
+    "floating": "浮动式",
+    "contentText": "斑马独特的条纹使它们成为人们最熟悉的动物之一。",
+    "contentTextLong": "斑马独特的条纹使它们成为人们最熟悉的动物之一。它们生活在各种栖息地，如草原、稀树草原、林地、多刺灌木丛、山区和海岸山丘。各种人为因素对斑马种群产生了严重影响，特别是猎杀、毁坏栖息地等因素。格雷维斑马和山地斑马濒临灭绝。虽然平原斑马数量更为丰富，但其中一个亚种——夸加斑马已经灭绝。",
     "rowHeight": "行高",
     "title": {
-      "dark": "暗色背景",
-      "bright": "亮色卡片",
-      "titleOnImageNoOverlay": "图像上的标题，但没有叠加",
-      "normal": "标准卡",
-      "overlayAndTextOnImage": "图像上有覆盖和文本的卡片",
-      "stripeNoImage": "无图像条纹卡"
+      "default": "默认",
+      "withControls": "带控制",
+      "customHeader": "自定义标题",
+      "withoutHeader": "无标题",
+      "withImage": "带图片",
+      "withTitleOnImage": "带图片标题",
+      "withCustomTitleOnImage": "带自定义图片标题",
+      "withStripe": "带条纹",
+      "withBackground": "带背景"
     },
     "button": {
       "main": "主要",
-      "cancel": "取消"
+      "cancel": "取消",
+      "showMore": "显示更多",
+      "readMore": "阅读更多"
     },
     "link": {
       "edit": "编辑",
       "setAsDefault": "设为默认",
       "delete": "删除",
-      "traveling": "Traveling",
+      "traveling": "旅行",
       "france": "法国",
       "review": "评论",
-      "feedback": "反馈信息",
+      "feedback": "留下反馈",
       "readFull": "阅读全文",
-      "secondaryAction": "第二行为",
-      "action1": "行为 1",
-      "action2": "行为 2"
+      "secondaryAction": "次要操作",
+      "action1": "操作1",
+      "action2": "操作2"
     }
+  },
+  "colors": {
+    "themeColors": "主题颜色",
+    "extraColors": "额外颜色",
+    "gradients": {
+      "basic": {
+        "title": "按钮渐变"
+      },
+      "hovered": {
+        "title": "悬停按钮渐变",
+        "text": "悬停状态下，对原始样式（渐变或平面颜色）应用15％的变亮效果。"
+      },
+      "pressed": {
+        "title": "按下按钮渐变",
+        "text": "按下状态下，对原始样式（渐变或平面颜色）应用15％的加深效果。"
+      }
+    }
+  },
+  "tabs": {
+    "alignment": "选项卡对齐",
+    "overflow": "选项卡溢出",
+    "hidden": "带隐藏滑块的选项卡",
+    "grow": "选项卡自动增长"
   }
 }
