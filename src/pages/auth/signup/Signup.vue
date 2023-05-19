@@ -19,21 +19,21 @@
     /> -->
 
     <va-input
-        v-model="email"
-        class="mb-3"
-        placeholder="手机号"
-        :error="!!emailErrors.length"
-        :error-messages="emailErrors"
-      />
+      v-model="email"
+      class="mb-3"
+      placeholder="手机号"
+      :error="!!emailErrors.length"
+      :error-messages="emailErrors"
+    />
 
-      <va-input
-        v-model="password"
-        class="mb-3"
-        type="password"
-        placeholder="密码"
-        :error="!!passwordErrors.length"
-        :error-messages="passwordErrors"
-      />
+    <va-input
+      v-model="password"
+      class="mb-3"
+      type="password"
+      placeholder="密码"
+      :error="!!passwordErrors.length"
+      :error-messages="passwordErrors"
+    />
 
     <div class="auth-layout__options d-flex align-center justify-space-between">
       <va-checkbox

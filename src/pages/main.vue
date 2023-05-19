@@ -17,7 +17,7 @@
       <div class="row grid__container">
         <div class="tright">
           <p class="titleright1">重庆两江公共交通有限公司</p>
-          <div style="display: flex;">
+          <div style="display: flex">
             <va-icon :name="tianqiIcon" style="color: #1e9fff; margin-right: 10px" />
             <p class="titleright1">{{ wendu }} &nbsp; &nbsp; {{ tianqi }} &nbsp; &nbsp; &nbsp; &nbsp; {{ cityName }}</p>
           </div>
@@ -32,7 +32,7 @@
             <p style="font-size: 18px; color: #71eef3">关联性分析</p>
           </div>
           <div class="gird1">
-            <div class="bltgird" v-for="(item, index) in violationData" :key="index">
+            <div v-for="(item, index) in violationData" :key="index" class="bltgird">
               <p style="color: #71eef3; font-size: 20px; font-weight: bold">{{ item.num }}</p>
               <p class="gird1title">{{ item.title }}</p>
             </div>
@@ -68,12 +68,12 @@
           </div>
           <div class="mt-2" style="display: flex; justify-content: space-around">
             <div style="">
-              <div style="display: flex; font-weight: bold;margin-bottom: 8px;margin-top: 2px;">
+              <div style="display: flex; font-weight: bold; margin-bottom: 8px; margin-top: 2px">
                 <p style="color: #fff">张权 ----- &nbsp;</p>
                 <p style="color: red">危险预警</p>
               </div>
               <div style="display: flex; flex-direction: column; width: 200px">
-                <video src="../../public/video1.mp4" autoplay muted style="margin-bottom: 5px;"></video>
+                <video src="../../public/video1.mp4" autoplay muted style="margin-bottom: 5px"></video>
                 <video src="../../public/video2.mp4" autoplay muted></video>
               </div>
             </div>
@@ -93,7 +93,7 @@
       <div class="bcenter">
         <div class="bctop">
           <div class="bctopmain" style="display: flex">
-            <div class="bctopblock" v-for="(item, index) in bctopData" :key="index" style="flex-grow: 1; width: 0">
+            <div v-for="(item, index) in bctopData" :key="index" class="bctopblock" style="flex-grow: 1; width: 0">
               <div class="row" style="align-items: center; font-size: 10px">
                 <va-icon :name="item.icon" style="color: #1e9fff" />
                 <div style="color: #fff">{{ item.title }}</div>
@@ -191,291 +191,289 @@
   </div>
 </template>
 
-
-
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import { p0 } from '@amcharts/amcharts5'
-import axios from 'axios'
-import Qs from 'qs'
-import { useChartData } from '../data/charts/composables/useChartData'
-import { doughnutChartData } from '../data/charts'
-import VaChart  from "../components/va-charts/VaChart.vue"
-import echarts from 'echarts'
+  import { onMounted, ref } from 'vue'
+  import { p0 } from '@amcharts/amcharts5'
+  import axios from 'axios'
+  import Qs from 'qs'
+  import { useChartData } from '../data/charts/composables/useChartData'
+  import { doughnutChartData } from '../data/charts'
+  import VaChart from '../components/va-charts/VaChart.vue'
+  import echarts from 'echarts'
 
-const currentTime = ref(new Date().toLocaleString())
-const cityName = ref('')
-const wendu = ref('')
-const tianqi = ref('')
-const tianqiIcon = ref('')
-const violationData = ref([
-  { title: '错误驾驶', num: 182 },
-  { title: '失误驾驶', num: 233 },
-  { title: '违规驾驶', num: 343 },
-  { title: '攻击性驾驶', num: 382 },
-  { title: '车速异常', num: 423 },
-  { title: '车距异常', num: 535 },
-  { title: '平稳性异常', num: 675 },
-  { title: '预警司机比例', num: '35%' },
-])
-const bctopData = ref([
-  { title: '司机总人数', num: 1239, ifadd: false, addnum: 0, icon: 'person_outline' },
-  { title: '今日预警数', num: 2232, ifadd: true, addnum: 231, icon: 'warning' },
-  { title: '近期身体健康预警', num: '26%', ifadd: true, addnum: '3%', icon: 'check' },
-  { title: '近期驾驶行为预警', num: '67%', ifadd: true, addnum: '2%', icon: 'directions_run' },
-  { title: '近期驾驶员技术预警', num: '43%', ifadd: true, addnum: '4%', icon: 'event_note' },
-])
-const tableData = ref([
-  { name: '艾一宁', id: '0216', health: '优', behavior: '优', skill: '差', status: '危险', score: 62 },
-  { name: '安艳', id: '9654', health: '优', behavior: '中', skill: '优', status: '安全', score: 88 },
-  { name: '安成耀', id: '3902', health: '优', behavior: '优', skill: '优', status: '安全', score: 96 },
-  { name: '包睿', id: '4678', health: '优', behavior: '中', skill: '优', status: '警告', score: 81 },
-  { name: '包文凯', id: '4892', health: '中', behavior: '中', skill: '差', status: '警告', score: 56 },
-  { name: '曹清文', id: '6327', health: '优', behavior: '优', skill: '中', status: '安全', score: 90 },
-  { name: '曹友荃', id: '2259', health: '优', behavior: '优', skill: '优', status: '安全', score: 95 },
-  { name: '曹光', id: '7631', health: '优', behavior: '优', skill: '中', status: '安全', score: 89 },
-  { name: '陈艺星', id: '0832', health: '中', behavior: '中', skill: '优', status: '警告', score: 73 },
-  { name: '陈真', id: '1678', health: '差', behavior: '中', skill: '优', status: '警告', score: 68 },
-])
-const doughnutChartDataGenerated = useChartData({
-  labels: ['身体健康状态正常', '身体健康状态差'],
-  datasets: [
-    {
-      label: '健康状态',
-      backgroundColor: ['info', 'danger'],
-      data: [61, 245],
-    },
-  ],
-})
-const center = ref({ lng: 116.404, lat: 39.915 })
-const zoom = ref(15)
+  const currentTime = ref(new Date().toLocaleString())
+  const cityName = ref('')
+  const wendu = ref('')
+  const tianqi = ref('')
+  const tianqiIcon = ref('')
+  const violationData = ref([
+    { title: '错误驾驶', num: 182 },
+    { title: '失误驾驶', num: 233 },
+    { title: '违规驾驶', num: 343 },
+    { title: '攻击性驾驶', num: 382 },
+    { title: '车速异常', num: 423 },
+    { title: '车距异常', num: 535 },
+    { title: '平稳性异常', num: 675 },
+    { title: '预警司机比例', num: '35%' },
+  ])
+  const bctopData = ref([
+    { title: '司机总人数', num: 1239, ifadd: false, addnum: 0, icon: 'person_outline' },
+    { title: '今日预警数', num: 2232, ifadd: true, addnum: 231, icon: 'warning' },
+    { title: '近期身体健康预警', num: '26%', ifadd: true, addnum: '3%', icon: 'check' },
+    { title: '近期驾驶行为预警', num: '67%', ifadd: true, addnum: '2%', icon: 'directions_run' },
+    { title: '近期驾驶员技术预警', num: '43%', ifadd: true, addnum: '4%', icon: 'event_note' },
+  ])
+  const tableData = ref([
+    { name: '艾一宁', id: '0216', health: '优', behavior: '优', skill: '差', status: '危险', score: 62 },
+    { name: '安艳', id: '9654', health: '优', behavior: '中', skill: '优', status: '安全', score: 88 },
+    { name: '安成耀', id: '3902', health: '优', behavior: '优', skill: '优', status: '安全', score: 96 },
+    { name: '包睿', id: '4678', health: '优', behavior: '中', skill: '优', status: '警告', score: 81 },
+    { name: '包文凯', id: '4892', health: '中', behavior: '中', skill: '差', status: '警告', score: 56 },
+    { name: '曹清文', id: '6327', health: '优', behavior: '优', skill: '中', status: '安全', score: 90 },
+    { name: '曹友荃', id: '2259', health: '优', behavior: '优', skill: '优', status: '安全', score: 95 },
+    { name: '曹光', id: '7631', health: '优', behavior: '优', skill: '中', status: '安全', score: 89 },
+    { name: '陈艺星', id: '0832', health: '中', behavior: '中', skill: '优', status: '警告', score: 73 },
+    { name: '陈真', id: '1678', health: '差', behavior: '中', skill: '优', status: '警告', score: 68 },
+  ])
+  const doughnutChartDataGenerated = useChartData({
+    labels: ['身体健康状态正常', '身体健康状态差'],
+    datasets: [
+      {
+        label: '健康状态',
+        backgroundColor: ['info', 'danger'],
+        data: [61, 245],
+      },
+    ],
+  })
+  const center = ref({ lng: 116.404, lat: 39.915 })
+  const zoom = ref(15)
 
-const bcbleftData = ref([
-  { title: '心理健康', num: 2000, color: '#E42222' },
-  { title: '攻击性驾驶', num: 1800, color: '#ff842b' },
-  { title: '违规驾驶', num: 1600, color: '#FFD43A' },
-  { title: '疾病史', num: 1500, color: '#8f4ed6' },
-  { title: '疲劳驾驶', num: 1400, color: '#158DE3' },
-])
-const bcbleftTotalNum = ref(bcbleftData.value.reduce((acc, cur) => acc + cur.num, 0) / 2)
+  const bcbleftData = ref([
+    { title: '心理健康', num: 2000, color: '#E42222' },
+    { title: '攻击性驾驶', num: 1800, color: '#ff842b' },
+    { title: '违规驾驶', num: 1600, color: '#FFD43A' },
+    { title: '疾病史', num: 1500, color: '#8f4ed6' },
+    { title: '疲劳驾驶', num: 1400, color: '#158DE3' },
+  ])
+  const bcbleftTotalNum = ref(bcbleftData.value.reduce((acc, cur) => acc + cur.num, 0) / 2)
 
-const bcbrightData = ref([
-  { title: '失误驾驶', num: 2000, color: '#E42222' },
-  { title: '平稳性异常', num: 1800, color: '#ff842b' },
-  { title: '车速异常', num: 1600, color: '#FFD43A' },
-  { title: '健康意识', num: 1500, color: '#8f4ed6' },
-  { title: '车距异常', num: 1400, color: '#158DE3' },
-])
+  const bcbrightData = ref([
+    { title: '失误驾驶', num: 2000, color: '#E42222' },
+    { title: '平稳性异常', num: 1800, color: '#ff842b' },
+    { title: '车速异常', num: 1600, color: '#FFD43A' },
+    { title: '健康意识', num: 1500, color: '#8f4ed6' },
+    { title: '车距异常', num: 1400, color: '#158DE3' },
+  ])
 
-const updateTime = () => {
-  currentTime.value = new Date().toLocaleString()
-}
-const dayOfWeek = new Intl.DateTimeFormat('zh-CN', { weekday: 'long' }).format(new Date())
+  const updateTime = () => {
+    currentTime.value = new Date().toLocaleString()
+  }
+  const dayOfWeek = new Intl.DateTimeFormat('zh-CN', { weekday: 'long' }).format(new Date())
 
-onMounted(() => {
-  setInterval(updateTime, 1000)
-})
+  onMounted(() => {
+    setInterval(updateTime, 1000)
+  })
 </script>
 
 <style>
-.bgpic5 {
-  position: absolute;
-  top: 0;
-  left: 0px;
-  height: 80px;
-  width: auto;
-}
+  .bgpic5 {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 80px;
+    width: auto;
+  }
 
-.bgpic6 {
-  position: absolute;
-  top: 0;
-  right: 0px;
-  height: 80px;
-  width: auto;
-}
+  .bgpic6 {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    height: 80px;
+    width: auto;
+  }
 
-.tleft {
-  margin: 38px 0 0 40px;
-}
+  .tleft {
+    margin: 38px 0 0 40px;
+  }
 
-.title1 {
-  font-size: 25px;
-  color: #75f9fd;
-  text-align: center;
-}
+  .title1 {
+    font-size: 25px;
+    color: #75f9fd;
+    text-align: center;
+  }
 
-.tcenter {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0 0 200px;
-}
+  .tcenter {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 0 200px;
+  }
 
-.title2 {
-  font-size: 30px;
-  color: white;
-  text-align: center;
-}
+  .title2 {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+  }
 
-.bgpic3 {
-  height: 80px;
-  width: auto;
-  margin-left: 10px;
-}
+  .bgpic3 {
+    height: 80px;
+    width: auto;
+    margin-left: 10px;
+  }
 
-.tright {
-  margin: 30px 0 0 150px;
-}
+  .tright {
+    margin: 30px 0 0 150px;
+  }
 
-.titleright1 {
-  color: white;
-  margin-left: 20px;
-  margin: 0 0 5px 0;
-}
+  .titleright1 {
+    color: white;
+    margin-left: 20px;
+    margin: 0 0 5px 0;
+  }
 
-.bottom {
-  display: flex;
-  flex-direction: row;
-}
+  .bottom {
+    display: flex;
+    flex-direction: row;
+  }
 
-.bleft {
-  display: flex;
-  flex-direction: column;
-  height: 88vh;
-  flex-basis: 25%;
-  padding: 10px 10px 0 10px;
-  /* background-color: #fff; */
-}
+  .bleft {
+    display: flex;
+    flex-direction: column;
+    height: 88vh;
+    flex-basis: 25%;
+    padding: 10px 10px 0 10px;
+    /* background-color: #fff; */
+  }
 
-.bcenter {
-  flex-basis: 50%;
-  padding: 20px 0 0 0px;
-}
+  .bcenter {
+    flex-basis: 50%;
+    padding: 20px 0 0 0px;
+  }
 
-.bright {
-  flex-basis: 25%;
-  padding: 10px 10px 0 10px;
-}
+  .bright {
+    flex-basis: 25%;
+    padding: 10px 10px 0 10px;
+  }
 
-.blboxs {
-  border-radius: 16px;
-  border: 2px solid rgba(10, 67, 158, 1);
-  text-align: center;
-  padding: 10px;
-  /* flex: 1; */
-  margin-top: 10px;
-  /* height: 33%; */
-}
+  .blboxs {
+    border-radius: 16px;
+    border: 2px solid rgba(10, 67, 158, 1);
+    text-align: center;
+    padding: 10px;
+    /* flex: 1; */
+    margin-top: 10px;
+    /* height: 33%; */
+  }
 
-.bltgird {
-  border: 1px solid rgba(70, 169, 195, 1);
-  /* padding: 20px 10px; */
-  /* width: 80px;
+  .bltgird {
+    border: 1px solid rgba(70, 169, 195, 1);
+    /* padding: 20px 10px; */
+    /* width: 80px;
   height: 80px; */
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 0;
-}
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+  }
 
-.gird1 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 6px;
-  margin-top: 10px;
-}
+  .gird1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 6px;
+    margin-top: 10px;
+  }
 
-.gird1title {
-  color: #fff;
-  font-size: 12px;
-  margin-top: 2px;
-  font-weight: bold;
-  transform: scale(0.8);
-  white-space: nowrap;
-}
+  .gird1title {
+    color: #fff;
+    font-size: 12px;
+    margin-top: 2px;
+    font-weight: bold;
+    transform: scale(0.8);
+    white-space: nowrap;
+  }
 
-.bctopmain {
-  display: flex;
-}
+  .bctopmain {
+    display: flex;
+  }
 
-.bctopblock {
-  flex-grow: 1;
-  text-align: center;
-}
+  .bctopblock {
+    flex-grow: 1;
+    text-align: center;
+  }
 
-.bccenter {
-  border: 1px solid rgba(29, 238, 255, 1);
-}
+  .bccenter {
+    border: 1px solid rgba(29, 238, 255, 1);
+  }
 
-.bcbottom {
-  display: flex;
-  margin-top: 10px;
-}
+  .bcbottom {
+    display: flex;
+    margin-top: 10px;
+  }
 
-.bcbbox {
-  flex-grow: 1;
-  border: 2px solid rgba(10, 67, 158, 1);
-  border-radius: 16px;
-  padding: 10px;
-  width: 50%;
-}
+  .bcbbox {
+    flex-grow: 1;
+    border: 2px solid rgba(10, 67, 158, 1);
+    border-radius: 16px;
+    padding: 10px;
+    width: 50%;
+  }
 
-.bcbleft {
-  margin-right: 10px;
-}
+  .bcbleft {
+    margin-right: 10px;
+  }
 
-.brbbox {
-  flex-grow: 1;
-  border: 2px solid rgba(10, 67, 158, 1);
-  border-radius: 16px;
-  padding: 10px;
-  margin-top: 10px;
-}
+  .brbbox {
+    flex-grow: 1;
+    border: 2px solid rgba(10, 67, 158, 1);
+    border-radius: 16px;
+    padding: 10px;
+    margin-top: 10px;
+  }
 
-.va-table {
-  color: #75f9fd;
-  font-size: 8px;
-  border-spacing: 0;
-  border-collapse: collapse;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  margin-top: 10px;
-}
+  .va-table {
+    color: #75f9fd;
+    font-size: 8px;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: 10px;
+  }
 
-.va-table th,
-.va-table td {
-  padding: 0.85rem 0rem;
-  text-align: center;
-  border: 1px solid #ddd;
-  font-size: 12px;
-}
+  .va-table th,
+  .va-table td {
+    padding: 0.85rem 0rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 12px;
+  }
 
-.bctnum {
-  font-size: 25px;
-  color: #1deeff;
-  background: linear-gradient(90deg, rgba(0, 177, 253, 0.73), rgba(0, 178, 178, 0));
-}
+  .bctnum {
+    font-size: 25px;
+    color: #1deeff;
+    background: linear-gradient(90deg, rgba(0, 177, 253, 0.73), rgba(0, 178, 178, 0));
+  }
 
-.bcbleftfor {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-}
+  .bcbleftfor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
 
-.mytag {
-  border-radius: 7.5px;
-  width: 22px;
-  height: 15px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  margin-right: 5px;
-}
+  .mytag {
+    border-radius: 7.5px;
+    width: 22px;
+    height: 15px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-right: 5px;
+  }
 </style>
