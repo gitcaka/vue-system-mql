@@ -1,5 +1,5 @@
 <template>
-  <div class="" style="background-color: #001a5a; min-height: 100vh">
+  <div class="" style="background-color: #001a5a; height: 770px; width: 1470px">
     <div class="top row">
       <img class="bgpic5" src="../../public/bgpic5.png" alt="" />
       <img class="bgpic6" src="../../public/bgpic6.png" alt="" />
@@ -328,7 +328,7 @@
 
   .bottom {
     display: flex;
-    flex-direction: row;
+    align-items: top;
   }
 
   .bleft {
@@ -337,7 +337,6 @@
     height: 88vh;
     flex-basis: 25%;
     padding: 10px 10px 0 10px;
-    /* background-color: #fff; */
   }
 
   .bcenter {

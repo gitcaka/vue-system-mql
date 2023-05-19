@@ -1,5 +1,5 @@
 <template>
-  <div class="flex" style="display: flex">
+  <div class="flex" style="display: flex;height: 770px; width: 1470px">
     <form @submit.prevent="onsubmit">
       <!-- <va-input
         v-model="email"
@@ -80,7 +80,7 @@
 </script>
 
 <style>
-  .qrcode {
-    width: 150px;
-  }
+.qrcode {
+  width: 150px;
+}
 </style>
