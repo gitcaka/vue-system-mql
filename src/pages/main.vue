@@ -193,13 +193,8 @@
 
 <script setup lang="ts">
   import { onMounted, ref } from 'vue'
-  import { p0 } from '@amcharts/amcharts5'
-  import axios from 'axios'
-  import Qs from 'qs'
   import { useChartData } from '../data/charts/composables/useChartData'
-  import { doughnutChartData } from '../data/charts'
   import VaChart from '../components/va-charts/VaChart.vue'
-  import echarts from 'echarts'
 
   const currentTime = ref(new Date().toLocaleString())
   const cityName = ref('')
