@@ -1,5 +1,5 @@
 <template>
-  <div class="" style="background-color: #001a5a; height: 770px; width: 1470px">
+  <div class="" style="background-color: #001a5a; height: 780px; width: 1480px">
     <div class="top row">
       <img class="bgpic5" src="../../public/bgpic5.png" alt="" />
       <img class="bgpic6" src="../../public/bgpic6.png" alt="" />

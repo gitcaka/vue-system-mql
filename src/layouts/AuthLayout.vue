@@ -1,9 +1,8 @@
 <template>
-  <!-- <div class="bgbox1"></div> -->
-  <img class="bgpic1" src="../../public/bgpic1.png" alt="" />
-  <img class="bgpic2" src="../../public/bgpic2.png" alt="" />
-  <img class="bgpic4" src="../../public/bgpic4.png" alt="" />
-  <div class="auth-layout row align-content-center">
+  <div class="auth-layout row align-content-center" style="height: 780px; width: 1480px">
+    <img class="bgpic1" src="../../public/bgpic1.png" alt="" />
+    <img class="bgpic2" src="../../public/bgpic2.png" alt="" />
+    <img class="bgpic4" src="../../public/bgpic4.png" alt="" />
     <div class="toplefttip">意见反馈</div>
     <div class="toprighttip">关于我们</div>
     <div class="flex xs12 pa-3 justify-center">
@@ -102,7 +101,7 @@
   }
 
   .bgpic1 {
-    position: absolute;
+    position: fixed;
     left: -200px;
     top: 90px;
     width: 768px;
@@ -110,7 +109,7 @@
   }
 
   .bgpic2 {
-    position: absolute;
+    position: fixed;
     right: -200px;
     top: 90px;
     width: 768px;

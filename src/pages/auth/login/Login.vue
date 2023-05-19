@@ -1,24 +1,6 @@
 <template>
-  <div class="flex" style="display: flex;height: 770px; width: 1470px">
+  <div class="flex" style="display: flex;">
     <form @submit.prevent="onsubmit">
-      <!-- <va-input
-        v-model="email"
-        class="mb-3"
-        type="email"
-        :label="t('auth.email')"
-        :error="!!emailErrors.length"
-        :error-messages="emailErrors"
-      /> -->
-
-      <!-- <va-input
-        v-model="password"
-        class="mb-3"
-        type="password"
-        :label="t('auth.password')"
-        :error="!!passwordErrors.length"
-        :error-messages="passwordErrors"
-      /> -->
-
       <va-input
         v-model="email"
         class="mb-3"
