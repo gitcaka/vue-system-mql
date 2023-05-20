@@ -3519,10 +3519,10 @@ vt-pbf@^3.1.3:
     "@mapbox/vector-tile" "^1.3.1"
     pbf "^3.2.1"
 
-vue-baidu-map-3x@^1.0.33:
-  version "1.0.33"
-  resolved "https://registry.npmmirror.com/vue-baidu-map-3x/-/vue-baidu-map-3x-1.0.33.tgz"
-  integrity sha512-6Op9/8iZeq6pJN0I6GZZ0JIcZgnq12ZVsP3mDZgqzoAEpkI3OtiI83GJbuA0O3YkWlMN1Yv3gr6R+6EaIQQICw==
+vue-baidu-map-3x@^1.0.34:
+  version "1.0.34"
+  resolved "https://registry.npmmirror.com/vue-baidu-map-3x/-/vue-baidu-map-3x-1.0.34.tgz"
+  integrity sha512-eU9VUPaL03NNoz2CXjCZCSGgaUXXcqituIm4nU1uh8Ts2kqxZ6c7IiH1ArXLmUl7yzIa0jLBiWeBtyfzDvBbBQ==
   dependencies:
     bmaplib.curveline "^1.0.0"
     bmaplib.distancetool "^1.0.2"

@@ -291,6 +291,8 @@
     "persian": "Persian"
   },
   "menu": {
+    "drivers": "Drivers",
+    "association":"association",
     "auth": "Auth",
     "rating": "Rating",
     "buttons": "Buttons",

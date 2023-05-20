@@ -5,7 +5,7 @@
       <img class="bgpic6" src="../../public/bgpic6.png" alt="" />
       <div class="tleft row grid__container">
         <va-icon name="access_time" style="color: #1e9fff" />
-        <p style="color: #fff; margin-left: 10px">{{ currentTime }} &nbsp; {{ dayOfWeek }}</p>
+        <p style="color: #fff; margin-left: 5px">{{ currentTime }} &nbsp; {{ dayOfWeek }}</p>
       </div>
       <div class="row grid__container">
         <div class="tcenter">
@@ -19,7 +19,7 @@
           <p class="titleright1">重庆两江公共交通有限公司</p>
           <div style="display: flex">
             <va-icon :name="tianqiIcon" style="color: #1e9fff; margin-right: 10px" />
-            <p class="titleright1">{{ wendu }} &nbsp; &nbsp; {{ tianqi }} &nbsp; &nbsp; &nbsp; &nbsp; {{ cityName }}</p>
+            <p class="titleright1">{{ wendu }} &nbsp; &nbsp; {{ tianqi }} &nbsp; &nbsp; &nbsp; &nbsp; 重庆市</p>
           </div>
         </div>
       </div>
@@ -44,12 +44,12 @@
             <p style="font-size: 18px; color: #71eef3">司机画像聚类</p>
           </div>
           <div style="display: flex; height: 135px; overflow: hidden">
-            <va-card style="background-color: #001a5a; position: relative; top: -80px">
+            <va-card style="background-color: initial; box-shadow: none; position: relative; top: -80px">
               <va-card-content>
                 <va-chart :data="doughnutChartDataGenerated" type="doughnut" />
               </va-card-content>
             </va-card>
-            <va-card style="background-color: #001a5a; color: #fff; position: relative">
+            <va-card style="background-color: initial; box-shadow: none; color: #fff; position: relative">
               <va-card-content style="display: flex; flex-direction: column; align-items: center">
                 <div class="mb-3" style="width: 120px">
                   <va-progress-bar model-value="80" color="danger">状态差:80% </va-progress-bar>
@@ -73,8 +73,8 @@
                 <p style="color: red">危险预警</p>
               </div>
               <div style="display: flex; flex-direction: column; width: 200px">
-                <video src="../../public/video1.mp4" autoplay muted style="margin-bottom: 5px"></video>
-                <video src="../../public/video2.mp4" autoplay muted></video>
+                <video src="../../public/video1.mp4" autoplay muted loop style="margin-bottom: 5px"></video>
+                <video src="../../public/video2.mp4" autoplay muted loop></video>
               </div>
             </div>
             <div style="display: flex; flex-direction: column">
@@ -93,17 +93,48 @@
       <div class="bcenter">
         <div class="bctop">
           <div class="bctopmain" style="display: flex">
-            <div v-for="(item, index) in bctopData" :key="index" class="bctopblock" style="flex-grow: 1; width: 0">
+            <div v-for="(item, index) in bctopData" :key="index" class="bctopblock">
               <div class="row" style="align-items: center; font-size: 10px">
                 <va-icon :name="item.icon" style="color: #1e9fff" />
                 <div style="color: #fff">{{ item.title }}</div>
               </div>
-              <div class="bctnum">{{ item.num }}</div>
+              <div>
+                <div class="bctnum">
+                  {{ item.num }}
+                  <va-icon v-if="item.ifadd" :name="item.addIcon" style="color: #1e9fff; margin-left: 10px" />
+                  {{ item.addnum }}
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div class="bccenter mt-3">
-          <baidu-map :center="center" :zoom="zoom" style="width: 100%; height: 433px"></baidu-map>
+          <baidu-map
+            center="重庆"
+            :zoom="zoom"
+            :scroll-wheel-zoom="true"
+            :map-click="false"
+            style="width: 100%; height: 433px"
+            @ready="mapReadyHandler"
+          >
+            <bm-marker
+              :position="{ lng: item.location[0], lat: item.location[1] }"
+              :icon="{ url: item.icon, size: { width: 64, height: 64 } }"
+              @click="clickMarker(item)"
+              v-for="item in markers"
+              :key="item.id"
+            >
+            </bm-marker>
+            <bm-info-window :show="infoShow" @open="infoWindowOpen" @close="infoWindowClose" :position="infoPosition"
+              >{{ infoContent }}
+            </bm-info-window>
+            <!-- <bm-traffic> </bm-traffic> -->
+            <bm-geolocation
+              anchor="BMAP_ANCHOR_BOTTOM_RIGHT"
+              :showAddressBar="false"
+              :autoLocation="true"
+            ></bm-geolocation>
+          </baidu-map>
           <!-- <img src="../../public/swaper.png" style="width: 100%" alt="" /> -->
         </div>
         <div class="bcbottom">
@@ -114,7 +145,7 @@
             </div>
             <div v-for="(item, index) in bcbleftData" :key="index" class="bcbleftfor">
               <div class="mytag" :style="'background-color: ' + item.color">{{ index + 1 }}</div>
-              <div style="color: #fff; font-size: 10px; white-space: nowrap; margin-right: 5px">{{ item.title }}</div>
+              <div class="bcbtitle">{{ item.title }}</div>
               <va-progress-bar :model-value="(item.num / bcbleftTotalNum) * 100" />
               <div style="color: #fff; font-size: 15px; margin-left: 5px">{{ item.num }}</div>
             </div>
@@ -126,7 +157,7 @@
             </div>
             <div v-for="(item, index) in bcbrightData" :key="index" class="bcbleftfor">
               <div class="mytag" :style="'background-color: ' + item.color">{{ index + 1 }}</div>
-              <div style="color: #fff; font-size: 10px; white-space: nowrap; margin-right: 5px">{{ item.title }}</div>
+              <div class="bcbtitle">{{ item.title }}</div>
               <va-progress-bar :model-value="(item.num / bcbleftTotalNum) * 100" />
               <div style="color: #fff; font-size: 15px; margin-left: 5px">{{ item.num }}</div>
             </div>
@@ -137,7 +168,12 @@
         <div class="brtop brbbox">
           <div class="row" style="justify-content: space-between; width: 100%">
             <p style="font-size: 18px; color: #fff">司机当前状况及预警</p>
-            <p style="font-size: 18px; color: #71eef3">详情</p>
+            <router-link to="/admin/drivers">
+              <div style="display: flex">
+                <p style="font-size: 18px; color: #71eef3">详情</p>
+                <va-icon name="chevron_right" style="color: #1e9fff" />
+              </div>
+            </router-link>
           </div>
           <table class="va-table">
             <thead>
@@ -195,6 +231,8 @@
   import { onMounted, ref } from 'vue'
   import { useChartData } from '../data/charts/composables/useChartData'
   import VaChart from '../components/va-charts/VaChart.vue'
+  import axios from 'axios'
+  import qs from 'qs'
 
   const currentTime = ref(new Date().toLocaleString())
   const cityName = ref('')
@@ -212,11 +250,25 @@
     { title: '预警司机比例', num: '35%' },
   ])
   const bctopData = ref([
-    { title: '司机总人数', num: 1239, ifadd: false, addnum: 0, icon: 'person_outline' },
-    { title: '今日预警数', num: 2232, ifadd: true, addnum: 231, icon: 'warning' },
-    { title: '近期身体健康预警', num: '26%', ifadd: true, addnum: '3%', icon: 'check' },
-    { title: '近期驾驶行为预警', num: '67%', ifadd: true, addnum: '2%', icon: 'directions_run' },
-    { title: '近期驾驶员技术预警', num: '43%', ifadd: true, addnum: '4%', icon: 'event_note' },
+    { title: '司机总人数', num: 1239, ifadd: false, addnum: 0, icon: 'person_outline', addIcon: '' },
+    { title: '今日预警数', num: 2232, ifadd: true, addnum: 231, icon: 'warning', addIcon: 'entypo-up-thin' },
+    { title: '近期身体健康预警', num: '26%', ifadd: true, addnum: '3%', icon: 'check', addIcon: 'entypo-up-thin' },
+    {
+      title: '近期驾驶行为预警',
+      num: '67%',
+      ifadd: true,
+      addnum: '2%',
+      icon: 'directions_run',
+      addIcon: 'entypo-up-thin',
+    },
+    {
+      title: '近期驾驶员技术预警',
+      num: '43%',
+      ifadd: true,
+      addnum: '4%',
+      icon: 'event_note',
+      addIcon: 'entypo-up-thin',
+    },
   ])
   const tableData = ref([
     { name: '艾一宁', id: '0216', health: '优', behavior: '优', skill: '差', status: '危险', score: 62 },
@@ -240,8 +292,41 @@
       },
     ],
   })
+
   const center = ref({ lng: 116.404, lat: 39.915 })
-  const zoom = ref(15)
+  const zoom = ref(13)
+  const markerPoint = ref({ lng: 106.531869, lat: 29.594114 })
+  const markers = ref([
+    { id: 1, location: [106.540205, 29.557017], content: '第一个点', icon: '../../public/point_default.png' },
+    { id: 2, location: [106.555368, 29.567196], content: '第二个点', icon: '../../public/point_blue.png' },
+    { id: 3, location: [106.574772, 29.540867], content: '第三个点', icon: '../../public/point_red.png' },
+    { id: 4, location: [106.490116, 29.585729], content: '第四个点', icon: '../../public/point_yellow.png' },
+    { id: 5, location: [106.60323, 29.580829], content: '第五个点', icon: '../../public/point_green.png' },
+    { id: 6, location: [106.557812, 29.611229], content: '第六个点', icon: '../../public/point_darkblue.png' },
+    { id: 7, location: [106.637438, 29.566002], content: '第七个点', icon: '../../public/point_purple.png' },
+  ])
+  const infoShow = ref(false)
+  const infoContent = ref('')
+  const infoPosition = ref()
+  const infoWindowOpen = ref(function () {
+    infoShow.value = true
+  })
+  const infoWindowClose = ref(function () {
+    infoShow.value = false
+  })
+  const mapReadyHandler = ref(function ({ BMap, map }) {
+    let mapStyle = { style: 'bluish' }
+    map.setMapStyle(mapStyle)
+    // map.setMapStyleV2({
+    //   styleId: '92e4203b695ec4c9f650eaf20ef61d58',
+    // })
+  })
+  const clickMarker = ref(function (item) {
+    infoPosition.value = { lng: item.location[0], lat: item.location[1] }
+    // console.log(infoPosition.value, item.icon)
+    infoContent.value = item.content
+    infoShow.value = true
+  })
 
   const bcbleftData = ref([
     { title: '心理健康', num: 2000, color: '#E42222' },
@@ -267,6 +352,22 @@
 
   onMounted(() => {
     setInterval(updateTime, 1000)
+
+    axios({
+      method: 'post',
+      url: 'https://apis.tianapi.com/tianqi/index',
+      data: qs.stringify({ key: '89fd8002d6d9b3ba7c3c98748efa2779', city: '重庆市', type: '1' }),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    }).then((res) => {
+      // console.log(res.data.result)
+      wendu.value = res.data.result.lowest + ' - ' + res.data.result.highest
+      tianqi.value = res.data.result.weather
+      if (tianqi.value.indexOf('云') !== -1) {
+        tianqiIcon.value = 'cloud'
+      } else {
+        tianqiIcon.value = 'md-sunny'
+      }
+    })
   })
 </script>
 
@@ -318,6 +419,9 @@
 
   .tright {
     margin: 30px 0 0 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
   .titleright1 {
@@ -396,6 +500,10 @@
   .bctopblock {
     flex-grow: 1;
     text-align: center;
+    flex-grow: 1;
+    width: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .bccenter {
@@ -450,6 +558,8 @@
     font-size: 25px;
     color: #1deeff;
     background: linear-gradient(90deg, rgba(0, 177, 253, 0.73), rgba(0, 178, 178, 0));
+    text-align: left;
+    padding-left: 30px;
   }
 
   .bcbleftfor {
@@ -469,5 +579,13 @@
     justify-content: center;
     color: #fff;
     margin-right: 5px;
+  }
+
+  .bcbtitle {
+    color: #fff;
+    font-size: 10px;
+    white-space: nowrap;
+    margin-right: 5px;
+    width: 90px;
   }
 </style>

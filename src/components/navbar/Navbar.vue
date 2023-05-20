@@ -9,22 +9,22 @@
           @click="isSidebarMinimized = !isSidebarMinimized"
         />
         <router-link to="/">
-          <vuestic-logo class="logo" />
+          <img src="../../../public/logo.png" style="height: 50px;width: auto;">
         </router-link>
       </div>
     </template>
     <template #center>
       <div class="app-navbar-center">
-        <span class="app-navbar-center__text mr-2">{{ t('navbar.messageUs') }}</span>
-        <a
+        <span class="app-navbar-center__text" style="font-size: 25px;font-weight: bold;">公交驾驶员行车安全数字画像系统</span>
+        <!-- <a
           class="app-navbar-center__mail mr-2"
           href="mailto:hello@epicmax.co"
           target="_blank"
           :style="{ color: colors.primary }"
         >
           hello@epicmax.co
-        </a>
-        <va-button
+        </a> -->
+        <!-- <va-button
           href="https://github.com/epicmaxco/vuestic-admin"
           color="#000000"
           class="app-navbar-center__github-button"
@@ -32,7 +32,7 @@
           target="_blank"
         >
           {{ t('navbar.repository') }}
-        </va-button>
+        </va-button> -->
       </div>
     </template>
     <template #right>
@@ -47,7 +47,6 @@
   import { useGlobalStore } from '../../stores/global-store'
   import { useI18n } from 'vue-i18n'
   import { useColors } from 'vuestic-ui'
-  import VuesticLogo from '../VuesticLogo.vue'
   import VaIconMenuCollapsed from '../icons/VaIconMenuCollapsed.vue'
   import AppNavbarActions from './components/AppNavbarActions.vue'
 

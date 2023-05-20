@@ -117,7 +117,7 @@
   }
 
   .toplefttip {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     color: #fff;
@@ -127,7 +127,7 @@
   }
 
   .toprighttip {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     color: #fff;

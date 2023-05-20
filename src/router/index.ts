@@ -23,6 +23,16 @@ const routes: Array<RouteRecordRaw> = [
     component: AppLayout,
     children: [
       {
+        name: 'drivers',
+        path: 'drivers',
+        component: () => import('../pages/admin/drivers.vue'),
+      },
+      {
+        name: 'association',
+        path: 'association',
+        component: () => import('../pages/admin/association.vue'),
+      },
+      {
         name: 'dashboard',
         path: 'dashboard',
         component: () => import('../pages/admin/dashboard/Dashboard.vue'),

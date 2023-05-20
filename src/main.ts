@@ -9,10 +9,12 @@ import vuesticGlobalConfig from './services/vuestic-ui/global-config'
 import App from './App.vue'
 
 import BaiduMap from 'vue-baidu-map-3x'
+import qs from 'qs'
 
 const app = createApp(App)
 
 app.use(stores)
+app.use(qs)
 app.use(router)
 app.use(i18n)
 app.use(createVuestic({ config: vuesticGlobalConfig }))

@@ -12,6 +12,20 @@ export default {
   },
   routes: [
     {
+      name: 'drivers',
+      displayName: 'menu.drivers',
+      meta: {
+        icon: 'vuestic-iconset-dashboard',
+      },
+    },
+    {
+      name: 'association',
+      displayName: 'menu.association',
+      meta: {
+        icon: 'vuestic-iconset-graph',
+      },
+    },
+    {
       name: 'dashboard',
       displayName: 'menu.dashboard',
       meta: {

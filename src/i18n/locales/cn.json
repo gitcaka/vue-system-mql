@@ -276,6 +276,8 @@
     "persian": "波斯语"
   },
   "menu": {
+    "drivers": "司机基本档案",
+    "association":"关联性分析",
     "auth": "认证",
     "rating": "评分",
     "buttons": "按钮",
@@ -326,7 +328,8 @@
   },
   "messages": {
     "all": "查看全部消息",
-    "new": "来自{name}的新消息"
+    "new": "来自{name}的新消息",
+    "mark_as_read": "标记为已读"
   },
   "modal": {
     "cancel": "取消",
@@ -403,13 +406,15 @@
     }
   },
   "navbar": {
-    "messageUs": "需要Web开发帮助吗？请联系我们。"
+    "messageUs": "需要Web开发帮助吗？请联系我们。",
+    "repository": "GitHub 代码库"
   },
   "notifications": {
     "all": "查看所有通知",
     "sentMessage": "{name} 给你发了一条消息",
     "uploadedZip": "{name} 上传了一个新的Zip文件 {type}",
-    "startedTopic": "{name} 开始了一个新话题"
+    "startedTopic": "{name} 开始了一个新话题",
+    "mark_as_read": "标记为已读"
   },
   "timelines": {
     "horizontalSimple": "水平简单",

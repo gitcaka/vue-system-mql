@@ -7,22 +7,20 @@
     <va-dropdown-content class="color-dropdown__content pl-4 pr-4 pt-2 pb-2">
       <va-button-toggle
         v-model="currentTheme"
-        class="color-dropdown__toggle"
         :options="themeOptions"
-        outline
-        round
-        grow
-        size="small"
+        preset="outline"
+        border-color="info"
+        color="info"
       />
 
-      <table style="width: 100%">
+      <!-- <table style="width: 100%">
         <color-dropdown-item
           v-for="colorName in colorNames"
           :key="colorName"
           class="color-picker-dropdown"
           :color-name="colorName"
         />
-      </table>
+      </table> -->
     </va-dropdown-content>
   </va-dropdown>
 </template>
@@ -41,9 +39,15 @@
     applyPreset(currentTheme.value)
   })
 
+  function getThemelabel(themeName: string) {
+    if (themeName == 'light') {
+      return '浅色'
+    } else return '深色'
+  }
+
   const themeOptions = Object.keys(presets.value).map((themeName) => ({
     value: themeName,
-    label: themeName,
+    label: getThemelabel(themeName),
   }))
   const colorNames = Object.keys(colors)
 </script>
