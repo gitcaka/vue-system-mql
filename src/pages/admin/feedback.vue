@@ -93,11 +93,12 @@
     <div class="flex xs5" style="height: 100%">
       <va-card style="height: 100%">
         <va-card-content>
-          <Swiper :params="swiperOptions" style="width: 100%; overflow: hidden">
+          <img src="../../../public/swiper1.png" style="width: 100%" />
+          <!-- <Swiper :params="swiperOptions" style="width: 100%; overflow: hidden">
             <SwiperSlide v-for="(slide, index) in swiperSlides" :key="index" style="">
               <img :src="slide.image" style="width: 100%" />
             </SwiperSlide>
-          </Swiper>
+          </Swiper> -->
         </va-card-content>
       </va-card>
     </div>
@@ -276,12 +277,17 @@
       </div>
     </va-card-content>
   </va-card>
+
+  <swiper :pagination="{ clickable: true }">
+    <swiper-slide>Slide 1</swiper-slide>
+    <swiper-slide>Slide 2</swiper-slide>
+    <swiper-slide>Slide 3</swiper-slide>
+  </swiper>
 </template>
 
 <script setup lang="ts">
   import { ref } from 'vue'
-  import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-  import '../../../node_modules/swiper/dist/css/swiper.css'
+
   const currentTime = ref(new Date().toLocaleString().split(' ')[0])
   const dayOfWeek = new Intl.DateTimeFormat('zh-CN', { weekday: 'long' }).format(new Date())
   const selectModal = ref('推文评论')

@@ -318,7 +318,7 @@
   const infoWindowClose = ref(function () {
     infoShow.value = false
   })
-  const mapReadyHandler = ref(function ({ map }) {
+  const mapReadyHandler = ref(function ({ Bmap, map }) {
     let mapStyle = { style: 'bluish' }
     map.setMapStyle(mapStyle)
     // map.setMapStyleV2({
