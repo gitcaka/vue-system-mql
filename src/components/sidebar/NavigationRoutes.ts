@@ -26,6 +26,13 @@ export default {
       },
     },
     {
+      name: 'feedback',
+      displayName: 'menu.feedback',
+      meta: {
+        icon: 'ion-md-happy',
+      },
+    },
+    {
       name: 'dashboard',
       displayName: 'menu.dashboard',
       meta: {

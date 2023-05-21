@@ -27,11 +27,12 @@
 
 <script setup lang="ts">
   import VaIconColor from '../../../icons/VaIconColor.vue'
-  import ColorDropdownItem from './ColorDropdownItem.vue'
+  // import ColorDropdownItem from './ColorDropdownItem.vue'
   import { useColors } from 'vuestic-ui'
   import { ref, watchEffect } from 'vue'
 
-  const { presets, applyPreset, colors } = useColors()
+  // const { presets, applyPreset, colors } = useColors()
+  const { presets, applyPreset } = useColors()
 
   const currentTheme = ref('light')
 
@@ -49,7 +50,7 @@
     value: themeName,
     label: getThemelabel(themeName),
   }))
-  const colorNames = Object.keys(colors)
+  // const colorNames = Object.keys(colors)
 </script>
 
 <style lang="scss" scoped>

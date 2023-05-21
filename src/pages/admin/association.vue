@@ -17,7 +17,7 @@
           <h1 style="font-size: 20px">典型违规行为组合</h1>
         </va-card-title>
         <va-card-content>
-          <div class="grid__container" v-for="(item, index) in data1" :key="index">
+          <div v-for="(item, index) in data1" :key="index" class="grid__container">
             {{ item.title1 }}
             <img src="../../../public/double_arrow.png" alt="" />
             <div style="margin-right: 10px">{{ item.title2 }}</div>

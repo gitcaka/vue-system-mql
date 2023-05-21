@@ -33,6 +33,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../pages/admin/association.vue'),
       },
       {
+        name: 'feedback',
+        path: 'feedback',
+        component: () => import('../pages/admin/feedback.vue'),
+      },
+      {
         name: 'dashboard',
         path: 'dashboard',
         component: () => import('../pages/admin/dashboard/Dashboard.vue'),

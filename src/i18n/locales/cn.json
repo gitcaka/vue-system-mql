@@ -277,7 +277,8 @@
   },
   "menu": {
     "drivers": "司机基本档案",
-    "association":"关联性分析",
+    "association": "关联性分析",
+    "feedback": "乘客反馈",
     "auth": "认证",
     "rating": "评分",
     "buttons": "按钮",

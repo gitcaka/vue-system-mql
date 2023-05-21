@@ -118,21 +118,21 @@
             @ready="mapReadyHandler"
           >
             <bm-marker
+              v-for="item in markers"
+              :key="item.id"
               :position="{ lng: item.location[0], lat: item.location[1] }"
               :icon="{ url: item.icon, size: { width: 64, height: 64 } }"
               @click="clickMarker(item)"
-              v-for="item in markers"
-              :key="item.id"
             >
             </bm-marker>
-            <bm-info-window :show="infoShow" @open="infoWindowOpen" @close="infoWindowClose" :position="infoPosition"
+            <bm-info-window :show="infoShow" :position="infoPosition" @open="infoWindowOpen" @close="infoWindowClose"
               >{{ infoContent }}
             </bm-info-window>
             <!-- <bm-traffic> </bm-traffic> -->
             <bm-geolocation
               anchor="BMAP_ANCHOR_BOTTOM_RIGHT"
-              :showAddressBar="false"
-              :autoLocation="true"
+              :show-address-bar="false"
+              :auto-location="true"
             ></bm-geolocation>
           </baidu-map>
           <!-- <img src="../../public/swaper.png" style="width: 100%" alt="" /> -->
@@ -235,7 +235,11 @@
   import qs from 'qs'
 
   const currentTime = ref(new Date().toLocaleString())
-  const cityName = ref('')
+  const updateTime = () => {
+    currentTime.value = new Date().toLocaleString()
+  }
+  const dayOfWeek = new Intl.DateTimeFormat('zh-CN', { weekday: 'long' }).format(new Date())
+  // const cityName = ref('')
   const wendu = ref('')
   const tianqi = ref('')
   const tianqiIcon = ref('')
@@ -293,9 +297,9 @@
     ],
   })
 
-  const center = ref({ lng: 116.404, lat: 39.915 })
+  // const center = ref({ lng: 116.404, lat: 39.915 })
   const zoom = ref(13)
-  const markerPoint = ref({ lng: 106.531869, lat: 29.594114 })
+  // const markerPoint = ref({ lng: 106.531869, lat: 29.594114 })
   const markers = ref([
     { id: 1, location: [106.540205, 29.557017], content: '第一个点', icon: '../../public/point_default.png' },
     { id: 2, location: [106.555368, 29.567196], content: '第二个点', icon: '../../public/point_blue.png' },
@@ -314,14 +318,14 @@
   const infoWindowClose = ref(function () {
     infoShow.value = false
   })
-  const mapReadyHandler = ref(function ({ BMap, map }) {
+  const mapReadyHandler = ref(function ({ map }) {
     let mapStyle = { style: 'bluish' }
     map.setMapStyle(mapStyle)
     // map.setMapStyleV2({
     //   styleId: '92e4203b695ec4c9f650eaf20ef61d58',
     // })
   })
-  const clickMarker = ref(function (item) {
+  const clickMarker = ref(function (item: { location: any[]; content: string }) {
     infoPosition.value = { lng: item.location[0], lat: item.location[1] }
     // console.log(infoPosition.value, item.icon)
     infoContent.value = item.content
@@ -344,11 +348,6 @@
     { title: '健康意识', num: 1500, color: '#8f4ed6' },
     { title: '车距异常', num: 1400, color: '#158DE3' },
   ])
-
-  const updateTime = () => {
-    currentTime.value = new Date().toLocaleString()
-  }
-  const dayOfWeek = new Intl.DateTimeFormat('zh-CN', { weekday: 'long' }).format(new Date())
 
   onMounted(() => {
     setInterval(updateTime, 1000)

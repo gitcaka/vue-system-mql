@@ -292,7 +292,8 @@
   },
   "menu": {
     "drivers": "Drivers",
-    "association":"association",
+    "association": "association",
+    "feedback": "feedback",
     "auth": "Auth",
     "rating": "Rating",
     "buttons": "Buttons",

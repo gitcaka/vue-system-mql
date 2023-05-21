@@ -9,13 +9,15 @@
           @click="isSidebarMinimized = !isSidebarMinimized"
         />
         <router-link to="/">
-          <img src="../../../public/logo.png" style="height: 50px;width: auto;">
+          <img src="../../../public/logo.png" style="height: 50px; width: auto" />
         </router-link>
       </div>
     </template>
     <template #center>
       <div class="app-navbar-center">
-        <span class="app-navbar-center__text" style="font-size: 25px;font-weight: bold;">公交驾驶员行车安全数字画像系统</span>
+        <span class="app-navbar-center__text" style="font-size: 25px; font-weight: bold"
+          >公交驾驶员行车安全数字画像系统</span
+        >
         <!-- <a
           class="app-navbar-center__mail mr-2"
           href="mailto:hello@epicmax.co"
@@ -45,13 +47,12 @@
   import { computed } from 'vue'
   import { storeToRefs } from 'pinia'
   import { useGlobalStore } from '../../stores/global-store'
-  import { useI18n } from 'vue-i18n'
+  // import { useI18n } from 'vue-i18n'
   import { useColors } from 'vuestic-ui'
   import VaIconMenuCollapsed from '../icons/VaIconMenuCollapsed.vue'
   import AppNavbarActions from './components/AppNavbarActions.vue'
 
   const GlobalStore = useGlobalStore()
-  const { t } = useI18n()
 
   const { isSidebarMinimized, userName } = storeToRefs(GlobalStore)
 

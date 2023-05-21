@@ -99,16 +99,19 @@
           </tbody>
         </table>
       </div>
+      <div style="width: 100%; justify-content: center; display: flex; margin-top: 20px">
+        <va-pagination v-model="activeTable" :visible-pages="10" :pages="99" />
+      </div>
     </va-card-content>
   </va-card>
 </template>
 
 <script setup lang="ts">
-  import { number } from '@intlify/core-base'
   import { ref } from 'vue'
 
   const search = ref('')
   const workStatusModal = ref('出勤中')
+  const activeTable = ref(1)
   const workStatusOptions = ref([
     { id: 1, description: '出勤中' },
     { id: 2, description: '休息中' },
