@@ -318,13 +318,17 @@
   const infoWindowClose = ref(function () {
     infoShow.value = false
   })
-  const mapReadyHandler = ref(function ({ Bmap, map }) {
+  // const map = ref('')
+  // const Bmap = ref('')
+  function mapReadyHandler(Bmap: any, map: any) {
+    // map.value = map
+    // Bmap.value = Bmap
     let mapStyle = { style: 'bluish' }
     map.setMapStyle(mapStyle)
     // map.setMapStyleV2({
     //   styleId: '92e4203b695ec4c9f650eaf20ef61d58',
     // })
-  })
+  }
   const clickMarker = ref(function (item: { location: any[]; content: string }) {
     infoPosition.value = { lng: item.location[0], lat: item.location[1] }
     // console.log(infoPosition.value, item.icon)

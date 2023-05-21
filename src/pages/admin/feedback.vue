@@ -332,19 +332,19 @@
     { id: 6, description: '贴吧' },
   ])
   const search = ref('')
-  const swiperOptions = ref({
-    spaceBetween: 10,
-    slideClass: 'custom-slide-class',
-    pagination: {
-      el: '.swiper-pagination', //与slot="pagination"处 class 一致
-      clickable: true, //轮播按钮支持点击
-    },
-    autoplay: {
-      delay: 100,
-      disableOnInteraction: false,
-    },
-    loop: true,
-  })
+  //   const swiperOptions = ref({
+  //     spaceBetween: 10,
+  //     slideClass: 'custom-slide-class',
+  //     pagination: {
+  //       el: '.swiper-pagination', //与slot="pagination"处 class 一致
+  //       clickable: true, //轮播按钮支持点击
+  //     },
+  //     autoplay: {
+  //       delay: 100,
+  //       disableOnInteraction: false,
+  //     },
+  //     loop: true,
+  //   })
   const swiperSlides = ref([{ image: '../../../public/swiper1.png' }, { image: '../../../public/swiper2.png' }])
   const comments = ref([
     {
