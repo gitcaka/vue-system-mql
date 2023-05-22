@@ -345,7 +345,7 @@
   //     },
   //     loop: true,
   //   })
-  const swiperSlides = ref([{ image: '../../../public/swiper1.png' }, { image: '../../../public/swiper2.png' }])
+  // const swiperSlides = ref([{ image: '../../../public/swiper1.png' }, { image: '../../../public/swiper2.png' }])
   const comments = ref([
     {
       id: 1,

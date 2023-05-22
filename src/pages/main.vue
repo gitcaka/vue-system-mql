@@ -334,13 +334,16 @@
     infoShow.value = false
   })
 
-  function mapReadyHandler({ Bmap, map }) {
+  const mapReadyHandler = ({ Bmap, map }: any) => {
     let mapStyle = { style: 'bluish' }
     map.setMapStyle(mapStyle)
-    // map.setMapStyleV2({
-    //   styleId: '92e4203b695ec4c9f650eaf20ef61d58',
-    // })
+    // // map.setMapStyleV2({
+    // //   styleId: '92e4203b695ec4c9f650eaf20ef61d58',
+    // // })
   }
+
+  // const mapStyle = ref({ style: 'bluish' })
+
   const clickMarker = ref(function (item: { location: any[]; content: string }) {
     infoPosition.value = { lng: item.location[0], lat: item.location[1] }
     // console.log(infoPosition.value, item.icon)
