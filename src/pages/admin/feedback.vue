@@ -92,8 +92,11 @@
   <div class="row" style="height: 100%">
     <div class="flex xs5" style="height: 100%">
       <va-card style="height: 100%">
+        <va-card-title>
+          <h1 style="color: rgb(21, 78, 193)">词云图</h1>
+        </va-card-title>
         <va-card-content>
-          <img src="../../../public/swiper1.png" style="width: 100%" />
+          <img src="../../../public/swiper1.jpg" style="width: 100%" />
           <!-- <Swiper :params="swiperOptions" style="width: 100%; overflow: hidden">
             <SwiperSlide v-for="(slide, index) in swiperSlides" :key="index" style="">
               <img :src="slide.image" style="width: 100%" />
