@@ -14,37 +14,43 @@ export default {
     {
       name: 'drivers',
       displayName: 'menu.drivers',
-      meta: {
-        icon: 'vuestic-iconset-dashboard',
-      },
+      meta: { icon: 'vuestic-iconset-dashboard' },
     },
     {
       name: 'association',
       displayName: 'menu.association',
-      meta: {
-        icon: 'vuestic-iconset-graph',
-      },
+      meta: { icon: 'vuestic-iconset-graph' },
+    },
+    {
+      name: 'cluster',
+      displayName: 'menu.cluster',
+      meta: { icon: 'vuestic-iconset-statistics' },
+      disabled: true,
+      children: [
+        {
+          name: 'label',
+          displayName: 'menu.label',
+        },
+        {
+          name: 'result',
+          displayName: 'menu.result',
+        },
+      ],
     },
     {
       name: 'feedback',
       displayName: 'menu.feedback',
-      meta: {
-        icon: 'ion-md-happy',
-      },
+      meta: { icon: 'ion-md-happy' },
     },
     {
       name: 'dashboard',
       displayName: 'menu.dashboard',
-      meta: {
-        icon: 'vuestic-iconset-dashboard',
-      },
+      meta: { icon: 'vuestic-iconset-dashboard' },
     },
     {
       name: 'statistics',
       displayName: 'menu.statistics',
-      meta: {
-        icon: 'vuestic-iconset-statistics',
-      },
+      meta: { icon: 'vuestic-iconset-statistics' },
       disabled: true,
       children: [
         {
@@ -60,9 +66,7 @@ export default {
     {
       name: 'forms',
       displayName: 'menu.forms',
-      meta: {
-        icon: 'vuestic-iconset-forms',
-      },
+      meta: { icon: 'vuestic-iconset-forms' },
       disabled: true,
       children: [
         {
@@ -78,9 +82,7 @@ export default {
     {
       name: 'tables',
       displayName: 'menu.tables',
-      meta: {
-        icon: 'vuestic-iconset-tables',
-      },
+      meta: { icon: 'vuestic-iconset-tables' },
       children: [
         {
           name: 'markup',
@@ -95,9 +97,7 @@ export default {
     {
       name: 'ui',
       displayName: 'menu.uiElements',
-      meta: {
-        icon: 'vuestic-iconset-ui-elements',
-      },
+      meta: { icon: 'vuestic-iconset-ui-elements' },
       disabled: true,
       children: [
         {
@@ -199,9 +199,7 @@ export default {
     {
       name: 'maps',
       displayName: 'menu.maps',
-      meta: {
-        icon: 'vuestic-iconset-maps',
-      },
+      meta: { icon: 'vuestic-iconset-maps' },
       disabled: true,
       children: [
         {
@@ -229,9 +227,7 @@ export default {
     {
       name: 'pages',
       displayName: 'menu.pages',
-      meta: {
-        icon: 'vuestic-iconset-files',
-      },
+      meta: { icon: 'vuestic-iconset-files' },
       disabled: true,
       children: [
         {

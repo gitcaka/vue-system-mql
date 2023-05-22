@@ -1,4 +1,5 @@
 export { bubbleChartData } from './bubbleChartData'
+export { mybubleChartData } from './mybubleChartData'
 export { doughnutChartData } from './doughnutChartData'
 export { barChartData } from './barChartData'
 export { horizontalBarChartData } from './horizontalBarChartData'

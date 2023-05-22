@@ -8,8 +8,11 @@
           :color="colors.primary"
           @click="isSidebarMinimized = !isSidebarMinimized"
         />
-        <router-link to="/">
-          <img src="../../../public/logo.png" style="height: 50px; width: auto" />
+        <router-link :to="{ name: 'main' }">
+          <img src="../../../public/logo.png" style="height: 55px; width: auto" />
+        </router-link>
+        <router-link :to="{ name: 'main' }">
+          <va-icon name="material-icons-home" color="primary" style="font-size: 30px" />
         </router-link>
       </div>
     </template>

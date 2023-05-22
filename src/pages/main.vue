@@ -29,7 +29,12 @@
         <div class="bltop blboxs" style="height: 180px">
           <div style="display: flex; justify-content: space-between">
             <p style="font-size: 18px; color: #fff">今日违规统计</p>
-            <p style="font-size: 18px; color: #71eef3">关联性分析</p>
+            <router-link :to="{ name: 'association' }">
+              <div style="display: flex">
+                <p style="font-size: 18px; color: #71eef3">事故关联性分析</p>
+                <va-icon name="chevron_right" style="color: #71eef3" />
+              </div>
+            </router-link>
           </div>
           <div class="gird1">
             <div v-for="(item, index) in violationData" :key="index" class="bltgird">
@@ -41,7 +46,12 @@
         <div class="blcenter blboxs">
           <div class="row" style="justify-content: space-between">
             <p style="font-size: 18px; color: #fff">今日显著聚类预警</p>
-            <p style="font-size: 18px; color: #71eef3">司机画像聚类</p>
+            <router-link :to="{ name: 'label' }">
+              <div style="display: flex">
+                <p style="font-size: 18px; color: #71eef3">司机画像聚类</p>
+                <va-icon name="chevron_right" style="color: #71eef3" />
+              </div>
+            </router-link>
           </div>
           <div style="display: flex; height: 135px; overflow: hidden">
             <va-card style="background-color: initial; box-shadow: none; position: relative; top: -80px">
@@ -168,10 +178,10 @@
         <div class="brtop brbbox">
           <div class="row" style="justify-content: space-between; width: 100%">
             <p style="font-size: 18px; color: #fff">司机当前状况及预警</p>
-            <router-link to="/admin/drivers">
+            <router-link :to="{ name: 'drivers' }">
               <div style="display: flex">
                 <p style="font-size: 18px; color: #71eef3">详情</p>
-                <va-icon name="chevron_right" style="color: #1e9fff" />
+                <va-icon name="chevron_right" style="color: #71eef3" />
               </div>
             </router-link>
           </div>
@@ -203,7 +213,12 @@
         <div class="brbottom brbbox">
           <div class="row" style="justify-content: space-between; width: 100%">
             <p style="font-size: 18px; color: #fff">内部团队在编人数</p>
-            <p style="font-size: 18px; color: #71eef3">人员基本档案</p>
+            <router-link :to="{ name: 'drivers' }">
+              <div style="display: flex">
+                <p style="font-size: 18px; color: #71eef3">驾驶员档案管理</p>
+                <va-icon name="chevron_right" style="color: #71eef3" />
+              </div>
+            </router-link>
           </div>
           <div style="display: flex; width: 100%; margin-top: 10px; justify-content: space-around">
             <va-card color="success" style="width: 48%">
@@ -318,11 +333,8 @@
   const infoWindowClose = ref(function () {
     infoShow.value = false
   })
-  // const map = ref('')
-  // const Bmap = ref('')
-  function mapReadyHandler(Bmap: any, map: any) {
-    // map.value = map
-    // Bmap.value = Bmap
+
+  function mapReadyHandler({ Bmap, map }) {
     let mapStyle = { style: 'bluish' }
     map.setMapStyle(mapStyle)
     // map.setMapStyleV2({

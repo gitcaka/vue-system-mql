@@ -1,12 +1,13 @@
 <template>
   <va-card>
     <va-card-title style="justify-content: space-between">
-      <h1 style="font-size: 20px">驾驶员档案信息</h1>
+      <h1 style="font-size: 20px">驾驶员档案管理</h1>
     </va-card-title>
     <va-card-content>
       <h1 style="font-size: 12px; font-weight: normal">您可以根据姓名、工号等基本信息对驾驶员档案进行查询。</h1>
     </va-card-content>
   </va-card>
+
   <div class="row mt-2" style="justify-content: space-around">
     <div class="flex">
       <va-card>

@@ -38,10 +38,28 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../pages/admin/feedback.vue'),
       },
       {
+        name: 'cluster',
+        path: 'cluster',
+        component: RouteViewComponent,
+        children: [
+          {
+            name: 'label',
+            path: 'label',
+            component: () => import('../pages/admin/cluster/Label.vue'),
+          },
+          {
+            name: 'result',
+            path: 'result',
+            component: () => import('../pages/admin/cluster/Result.vue'),
+          },
+        ],
+      },
+      {
         name: 'dashboard',
         path: 'dashboard',
         component: () => import('../pages/admin/dashboard/Dashboard.vue'),
       },
+
       {
         name: 'statistics',
         path: 'statistics',
