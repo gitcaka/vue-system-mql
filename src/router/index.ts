@@ -55,6 +55,28 @@ const routes: Array<RouteRecordRaw> = [
         ],
       },
       {
+        name: 'warning',
+        path: 'warning',
+        component: RouteViewComponent,
+        children: [
+          {
+            name: 'group',
+            path: 'group',
+            component: () => import('../pages/admin/warning/group.vue'),
+          },
+          {
+            name: 'person',
+            path: 'person',
+            component: () => import('../pages/admin/warning/person.vue'),
+          },
+          {
+            name: 'realtime',
+            path: 'realtime',
+            component: () => import('../pages/admin/warning/realtime.vue'),
+          },
+        ],
+      },
+      {
         name: 'dashboard',
         path: 'dashboard',
         component: () => import('../pages/admin/dashboard/Dashboard.vue'),

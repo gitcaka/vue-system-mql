@@ -16,7 +16,7 @@
       </div>
       <div class="row grid__container">
         <div class="tright">
-          <p class="titleright1">重庆两江公共交通有限公司</p>
+          <p class="titleright1">重庆南部公共交通有限公司</p>
           <div style="display: flex">
             <va-icon :name="tianqiIcon" style="color: #1e9fff; margin-right: 10px" />
             <p class="titleright1">{{ wendu }} &nbsp; &nbsp; {{ tianqi }} &nbsp; &nbsp; &nbsp; &nbsp; 重庆市</p>
@@ -316,13 +316,13 @@
   const zoom = ref(13)
   // const markerPoint = ref({ lng: 106.531869, lat: 29.594114 })
   const markers = ref([
-    { id: 1, location: [106.540205, 29.557017], content: '第一个点', icon: '../../public/point_default.png' },
-    { id: 2, location: [106.555368, 29.567196], content: '第二个点', icon: '../../public/point_blue.png' },
-    { id: 3, location: [106.574772, 29.540867], content: '第三个点', icon: '../../public/point_red.png' },
-    { id: 4, location: [106.490116, 29.585729], content: '第四个点', icon: '../../public/point_yellow.png' },
-    { id: 5, location: [106.60323, 29.580829], content: '第五个点', icon: '../../public/point_green.png' },
-    { id: 6, location: [106.557812, 29.611229], content: '第六个点', icon: '../../public/point_darkblue.png' },
-    { id: 7, location: [106.637438, 29.566002], content: '第七个点', icon: '../../public/point_purple.png' },
+    { id: 1, location: [106.540205, 29.557017], content: '第一个点', icon: 'public/point_default.png' },
+    { id: 2, location: [106.555368, 29.567196], content: '第二个点', icon: 'public/point_blue.png' },
+    { id: 3, location: [106.574772, 29.540867], content: '第三个点', icon: 'public/point_red.png' },
+    { id: 4, location: [106.490116, 29.585729], content: '第四个点', icon: 'public/point_yellow.png' },
+    { id: 5, location: [106.60323, 29.580829], content: '第五个点', icon: 'public/point_green.png' },
+    { id: 6, location: [106.557812, 29.611229], content: '第六个点', icon: 'public/point_darkblue.png' },
+    { id: 7, location: [106.637438, 29.566002], content: '第七个点', icon: 'public/point_purple.png' },
   ])
   const infoShow = ref(false)
   const infoContent = ref('')

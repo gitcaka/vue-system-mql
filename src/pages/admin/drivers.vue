@@ -36,13 +36,13 @@
     <va-card-title>驾驶员数据表</va-card-title>
     <va-card-content>
       <div style="display: flex; align-items: center">
-        <va-input v-model="search" placeholder="请输入驾驶员姓名" clearable style="margin: 10px 10px 10px 0">
+        <va-input v-model="search1" placeholder="请输入驾驶员姓名" clearable style="margin: 10px 10px 10px 0">
           <template #prependInner>
             <va-icon class="icon-left input-icon" name="search" />
           </template>
         </va-input>
 
-        <va-input v-model="search" placeholder="请输入驾驶员工号" clearable style="margin: 10px 10px 10px 0">
+        <va-input v-model="search2" placeholder="请输入驾驶员工号" clearable style="margin: 10px 10px 10px 0">
           <template #prependInner>
             <va-icon class="icon-left input-icon" name="search" />
           </template>
@@ -110,7 +110,8 @@
 <script setup lang="ts">
   import { ref } from 'vue'
 
-  const search = ref('')
+  const search1 = ref('')
+  const search2 = ref('')
   const workStatusModal = ref('出勤中')
   const activeTable = ref(1)
   const workStatusOptions = ref([

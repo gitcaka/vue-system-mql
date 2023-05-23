@@ -38,6 +38,26 @@ export default {
       ],
     },
     {
+      name: 'warning',
+      displayName: 'menu.warning',
+      meta: { icon: 'material-icons-alarm' },
+      disabled: true,
+      children: [
+        {
+          name: 'group',
+          displayName: 'menu.group',
+        },
+        {
+          name: 'person',
+          displayName: 'menu.person',
+        },
+        {
+          name: 'realtime',
+          displayName: 'menu.realtime',
+        },
+      ],
+    },
+    {
       name: 'feedback',
       displayName: 'menu.feedback',
       meta: { icon: 'ion-md-happy' },
