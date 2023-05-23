@@ -315,15 +315,7 @@
   // const center = ref({ lng: 116.404, lat: 39.915 })
   const zoom = ref(13)
   // const markerPoint = ref({ lng: 106.531869, lat: 29.594114 })
-  const markers = ref([
-    { id: 1, location: [106.540205, 29.557017], content: '第一个点', icon: 'public/point_default.png' },
-    { id: 2, location: [106.555368, 29.567196], content: '第二个点', icon: 'public/point_blue.png' },
-    { id: 3, location: [106.574772, 29.540867], content: '第三个点', icon: 'public/point_red.png' },
-    { id: 4, location: [106.490116, 29.585729], content: '第四个点', icon: 'public/point_yellow.png' },
-    { id: 5, location: [106.60323, 29.580829], content: '第五个点', icon: 'public/point_green.png' },
-    { id: 6, location: [106.557812, 29.611229], content: '第六个点', icon: 'public/point_darkblue.png' },
-    { id: 7, location: [106.637438, 29.566002], content: '第七个点', icon: 'public/point_purple.png' },
-  ])
+
   const infoShow = ref(false)
   const infoContent = ref('')
   const infoPosition = ref()
@@ -368,6 +360,16 @@
     { title: '车距异常', num: 1400, color: '#158DE3' },
   ])
 
+  const markers = ref([
+    // { id: 1, location: [106.540205, 29.557017], content: '第一个点', icon: 'public/point_yellow.png' },
+    // { id: 2, location: [106.555368, 29.567196], content: '第二个点', icon: 'public/point_green.png' },
+    // { id: 3, location: [106.574772, 29.540867], content: '第三个点', icon: 'public/point_red.png' },
+    // { id: 4, location: [106.490116, 29.585729], content: '第四个点', icon: 'public/point_green.png' },
+    // { id: 5, location: [106.60323, 29.580829], content: '第五个点', icon: 'public/point_green.png' },
+    // { id: 6, location: [106.557812, 29.611229], content: '第六个点', icon: 'public/point_green.png' },
+    // { id: 7, location: [106.637438, 29.566002], content: '第七个点', icon: 'public/point_yellow.png' },
+  ])
+
   onMounted(() => {
     setInterval(updateTime, 1000)
 
@@ -386,6 +388,29 @@
         tianqiIcon.value = 'md-sunny'
       }
     })
+
+    let createMarks = []
+    for (let index = 0; index < 50; index++) {
+      let id = index + 1
+      let lng = Math.random() * 0.2 + 106.45
+      let lat = Math.random() * 0.1 + 29.5
+      let content = '第' + id + '个点，经度：' + lng + '；纬度：' + lat
+      let icon =
+        'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_green.png?sign=720a70f0b04c3267ae886ea8204e26db&t=1684865993'
+      let m = Math.random()
+      if (m < 0.6) {
+        icon =
+          'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_green.png?sign=720a70f0b04c3267ae886ea8204e26db&t=1684865993'
+      } else if (m < 0.93) {
+        icon =
+          'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_yellow.png?sign=54aa5c90eb7d799fc33b36fe70e5172f&t=1684866019'
+      } else
+        icon =
+          'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_red.png?sign=c27cad03ad11e27346af83fa20368de0&t=1684865731'
+      let mark = { id: id, location: [lng, lat], content: content, icon: icon }
+      createMarks.push(mark)
+    }
+    markers.value = createMarks
   })
 </script>
 
