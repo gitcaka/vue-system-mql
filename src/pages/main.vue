@@ -361,6 +361,12 @@
   ])
 
   const markers = ref([
+    {
+      id: 0,
+      location: [106.540205, 29.557017],
+      content: '第一个点',
+      icon: 'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_yellow.png?sign=54aa5c90eb7d799fc33b36fe70e5172f&t=1684866019',
+    },
     // { id: 1, location: [106.540205, 29.557017], content: '第一个点', icon: 'public/point_yellow.png' },
     // { id: 2, location: [106.555368, 29.567196], content: '第二个点', icon: 'public/point_green.png' },
     // { id: 3, location: [106.574772, 29.540867], content: '第三个点', icon: 'public/point_red.png' },
