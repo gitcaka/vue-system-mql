@@ -18,6 +18,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../pages/main.vue'),
   },
   {
+    name: 'map',
+    path: '/map',
+    component: () => import('../pages/map.vue'),
+  },
+  {
     name: 'admin',
     path: '/admin',
     component: AppLayout,

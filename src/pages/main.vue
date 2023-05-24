@@ -335,9 +335,6 @@
   const mapReadyHandler = ({ Bmap, map }: any) => {
     let mapStyle = { style: 'bluish' }
     map.setMapStyle(mapStyle)
-    // // map.setMapStyleV2({
-    // //   styleId: '92e4203b695ec4c9f650eaf20ef61d58',
-    // // })
   }
 
   const clickMarker = ref(function (item: { location: any[]; content: string }) {
