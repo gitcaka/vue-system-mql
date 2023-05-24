@@ -73,14 +73,20 @@
         </div>
         <div class="blright blboxs">
           <div class="row" style="justify-content: space-between; width: 100%">
-            <p style="font-size: 18px; color: #fff">预警司机实时监控</p>
-            <p style="font-size: 18px; color: #71eef3">详情</p>
+            <p style="font-size: 18px; color: #fff">公交实时监控</p>
+            <!-- <p style="font-size: 18px; color: #71eef3">详情</p> -->
+            <router-link :to="{ name: 'realtime' }">
+              <div style="display: flex">
+                <p style="font-size: 18px; color: #71eef3">详情</p>
+                <va-icon name="chevron_right" style="color: #71eef3" />
+              </div>
+            </router-link>
           </div>
           <div class="mt-2" style="display: flex; justify-content: space-around">
             <div style="">
               <div style="display: flex; font-weight: bold; margin-bottom: 8px; margin-top: 2px">
-                <p style="color: #fff">张权 ----- &nbsp;</p>
-                <p style="color: red">危险预警</p>
+                <p style="color: #fff">当前驾驶员工号：&nbsp;</p>
+                <p style="color: #71eef3">0452</p>
               </div>
               <div style="display: flex; flex-direction: column; width: 200px">
                 <video src="../../public/video1.mp4" autoplay muted loop style="margin-bottom: 5px"></video>
@@ -334,11 +340,8 @@
     // // })
   }
 
-  // const mapStyle = ref({ style: 'bluish' })
-
   const clickMarker = ref(function (item: { location: any[]; content: string }) {
     infoPosition.value = { lng: item.location[0], lat: item.location[1] }
-    // console.log(infoPosition.value, item.icon)
     infoContent.value = item.content
     infoShow.value = true
   })
@@ -367,13 +370,6 @@
       content: '第一个点',
       icon: 'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_yellow.png?sign=54aa5c90eb7d799fc33b36fe70e5172f&t=1684866019',
     },
-    // { id: 1, location: [106.540205, 29.557017], content: '第一个点', icon: 'public/point_yellow.png' },
-    // { id: 2, location: [106.555368, 29.567196], content: '第二个点', icon: 'public/point_green.png' },
-    // { id: 3, location: [106.574772, 29.540867], content: '第三个点', icon: 'public/point_red.png' },
-    // { id: 4, location: [106.490116, 29.585729], content: '第四个点', icon: 'public/point_green.png' },
-    // { id: 5, location: [106.60323, 29.580829], content: '第五个点', icon: 'public/point_green.png' },
-    // { id: 6, location: [106.557812, 29.611229], content: '第六个点', icon: 'public/point_green.png' },
-    // { id: 7, location: [106.637438, 29.566002], content: '第七个点', icon: 'public/point_yellow.png' },
   ])
 
   onMounted(() => {
@@ -507,16 +503,11 @@
     border: 2px solid rgba(10, 67, 158, 1);
     text-align: center;
     padding: 10px;
-    /* flex: 1; */
     margin-top: 10px;
-    /* height: 33%; */
   }
 
   .bltgird {
     border: 1px solid rgba(70, 169, 195, 1);
-    /* padding: 20px 10px; */
-    /* width: 80px;
-  height: 80px; */
     display: flex;
     flex-direction: column;
     text-align: center;

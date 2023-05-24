@@ -30,3 +30,24 @@
     console.log(tabValue.value)
   }
 </script>
+
+<style>
+  .active {
+    background-color: #154ec1;
+    color: #fff;
+    font-size: 20px;
+  }
+
+  .deactive {
+    font-size: 12px;
+  }
+
+  .tab {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 5px;
+    align-items: center;
+    line-height: 30px;
+  }
+</style>
