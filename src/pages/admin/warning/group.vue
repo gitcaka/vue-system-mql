@@ -117,7 +117,9 @@
     </div>
 
     <va-card>
-      <va-card-title>驾驶员数据表</va-card-title>
+      <va-card-title>
+        <h1 style="font-size: 20px">驾驶员数据总览</h1>
+      </va-card-title>
       <va-card-content>
         <div style="display: flex; align-items: center">
           <va-input v-model="search1" placeholder="请输入驾驶员姓名" clearable style="margin: 10px 10px 10px 0">
