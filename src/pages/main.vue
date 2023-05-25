@@ -151,13 +151,17 @@
               :auto-location="true"
             ></bm-geolocation>
           </baidu-map>
-          <!-- <img src="../../public/swaper.png" style="width: 100%" alt="" /> -->
         </div>
         <div class="bcbottom">
           <div class="bcbleft bcbbox">
             <div class="row" style="justify-content: space-between; width: 100%">
-              <p style="font-size: 18px; color: #fff">考核优秀人数</p>
-              <p style="font-size: 18px; color: #71eef3"></p>
+              <p style="font-size: 18px; color: #fff">乘客反馈处理</p>
+              <router-link :to="{ name: 'feedback' }">
+                <div style="display: flex">
+                  <p style="font-size: 18px; color: #71eef3">详情</p>
+                  <va-icon name="chevron_right" style="color: #71eef3" />
+                </div>
+              </router-link>
             </div>
             <div v-for="(item, index) in bcbleftData" :key="index" class="bcbleftfor">
               <div class="mytag" :style="'background-color: ' + item.color">{{ index + 1 }}</div>
@@ -168,8 +172,13 @@
           </div>
           <div class="bcbright bcbbox">
             <div class="row" style="justify-content: space-between; width: 100%">
-              <p style="font-size: 18px; color: #fff">考核不合格人数</p>
-              <p style="font-size: 18px; color: #71eef3">考核方案优化</p>
+              <p style="font-size: 18px; color: #fff">考核数据统计</p>
+              <router-link :to="{ name: 'examine' }">
+                <div style="display: flex">
+                  <p style="font-size: 18px; color: #71eef3">考核方案优化</p>
+                  <va-icon name="chevron_right" style="color: #71eef3" />
+                </div>
+              </router-link>
             </div>
             <div v-for="(item, index) in bcbrightData" :key="index" class="bcbleftfor">
               <div class="mytag" :style="'background-color: ' + item.color">{{ index + 1 }}</div>
