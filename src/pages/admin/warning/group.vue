@@ -351,8 +351,6 @@
   const search1 = ref('')
   const search2 = ref('')
   const workStatusModal = ref('出勤中')
-  const activeTable = ref(1)
-  const activeTable2 = ref(1)
   const workStatusOptions = ref([
     { id: 1, description: '出勤中' },
     { id: 2, description: '休息中' },
@@ -364,6 +362,8 @@
     { id: 3, description: '11' },
     { id: 4, description: '6' },
   ])
+  const activeTable = ref(1)
+  const activeTable2 = ref(1)
 
   const driverInfos = ref([
     {

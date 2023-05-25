@@ -21,15 +21,13 @@
     <va-card class="mt-3">
       <va-card-content style="display: flex">
         <img
-          style="height: 185px; border: 1px solid #4095e5; border-radius: 5px"
+          style="height: 185px; border: 1px solid #767c88; border-radius: 5px"
           src="../../../../public/personpic1.png"
         />
         <div style="display: flex; flex-direction: column; width: 100%; padding: 0 20px 0 20px">
           <div style="display: flex; align-items: center; justify-content: space-between; width: 100%">
             <h1 style="font-size: 30px">张权</h1>
-            <va-button class="ml-3" color="info" style="border-radius: 5px" :to="{ name: 'label' }"
-              >查看完整画像分析</va-button
-            >
+            <va-button class="ml-3" color="info" style="border-radius: 5px">查看完整画像分析</va-button>
           </div>
           <div class="mt-3" style="display: flex; width: 100%">
             <div class="xs3 flex">
@@ -68,7 +66,7 @@
                   <va-popover
                     icon="material-icons-info_outline"
                     color="info"
-                    message="根据驾驶员分类给出针对性考核建议"
+                    message="分为高、中、低三种"
                     placement="right"
                     open
                   >
@@ -105,7 +103,7 @@
             <va-popover
               icon="material-icons-info_outline"
               color="info"
-              message="根据驾驶员分类给出针对性考核建议"
+              message="根据驾驶员的各类信息绘制人物画像，对画像结果进行分析"
               placement="right"
               open
             >
@@ -282,6 +280,219 @@
       </va-card-content>
     </va-card>
   </div>
+
+  <div v-else class="mt-4">
+    <va-card>
+      <va-card-title>
+        <h1 style="font-size: 20px">车辆数据查看</h1>
+      </va-card-title>
+    </va-card>
+    <div class="row" style="font-weight: bold">
+      <div class="flex xs3">
+        <va-card color="info">
+          <va-card-content>
+            <div style="display: flex; justify-content: center">
+              <h1 class="va-h4 ma-0">渝D9167D</h1>
+            </div>
+          </va-card-content>
+        </va-card>
+      </div>
+      <div class="flex xs3">
+        <va-card style="height: 100%">
+          <va-card-content style="align-items: center; display: flex; height: 100%; justify-content: center">
+            车辆型号：宇通ZK6105H
+          </va-card-content>
+        </va-card>
+      </div>
+      <div class="flex xs3">
+        <va-card style="height: 100%">
+          <va-card-content style="align-items: center; display: flex; height: 100%; justify-content: center">
+            行驶线路：364
+          </va-card-content>
+        </va-card>
+      </div>
+      <div class="flex xs3">
+        <va-card style="height: 100%">
+          <va-card-content style="align-items: center; display: flex; height: 100%; justify-content: center">
+            驾驶排班表
+            <va-button class="ml-3" color="info" style="border-radius: 5px">查看</va-button>
+          </va-card-content>
+        </va-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="flex xs4">
+        <va-card style="height: 100%">
+          <va-card-title style="font-size: 15px; justify-content: center">车辆图像</va-card-title>
+          <va-card-content>
+            <img class="vehcleimg" src="../../../../public/personpic4.png" />
+            <img class="vehcleimg mt-3" src="../../../../public/personpic5.png" />
+          </va-card-content>
+        </va-card>
+      </div>
+      <div class="flex xs8">
+        <va-card style="height: 100%">
+          <va-card-title style="font-size: 15px; justify-content: center">车辆信息</va-card-title>
+          <va-card-content>
+            <table class="va-table2" style="width: 100%; background-color: #158de3; border-radius: 10px; color: #fff">
+              <tbody style="font-weight: bold">
+                <tr>
+                  <td rowspan="2" style="vertical-align: middle; font-size: 25px">制动</td>
+                  <td>制动距离：<span :style="{ color: getColor2('良') }">良</span></td>
+                  <td>制动力度：<span :style="{ color: getColor2('优') }">优</span></td>
+                  <td>制动稳定性：<span :style="{ color: getColor2('中') }">中</span></td>
+                </tr>
+                <tr>
+                  <td colspan="3">制动距离越短、制动力度越大、制动稳定性越高</td>
+                </tr>
+              </tbody>
+            </table>
+            <table
+              class="va-table2 mt-3"
+              style="width: 100%; background-color: #158de3; border-radius: 10px; color: #fff"
+            >
+              <tbody style="font-weight: bold">
+                <tr>
+                  <td rowspan="2" style="vertical-align: middle; font-size: 25px">动力</td>
+                  <td>最大功率：<span :style="{ color: getColor2('优') }">优</span></td>
+                  <td>最大扭矩：<span :style="{ color: getColor2('差') }">差</span></td>
+                  <td>响应性：<span :style="{ color: getColor2('危险') }">危险</span></td>
+                </tr>
+                <tr>
+                  <td colspan="3">制动距离越短、制动力度越大、制动稳定性越高</td>
+                </tr>
+              </tbody>
+            </table>
+            <table
+              class="va-table2 mt-3"
+              style="width: 100%; background-color: #158de3; border-radius: 10px; color: #fff"
+            >
+              <tbody style="font-weight: bold">
+                <tr>
+                  <td rowspan="2" style="vertical-align: middle; font-size: 25px">照明</td>
+                  <td>照度：<span :style="{ color: getColor2('优') }">优</span></td>
+                  <td>均匀度：<span :style="{ color: getColor2('中') }">中</span></td>
+                  <td>色温：<span :style="{ color: getColor2('良') }">良</span></td>
+                </tr>
+                <tr>
+                  <td colspan="3">制动距离越短、制动力度越大、制动稳定性越高</td>
+                </tr>
+              </tbody>
+            </table>
+            <table
+              class="va-table2 mt-3"
+              style="width: 100%; background-color: #158de3; border-radius: 10px; color: #fff"
+            >
+              <tbody style="font-weight: bold">
+                <tr>
+                  <td rowspan="2" style="vertical-align: middle; font-size: 25px">稳定</td>
+                  <td>侧倾角：<span :style="{ color: getColor2('优') }">优</span></td>
+                  <td>车身姿态：<span :style="{ color: getColor2('良') }">良</span></td>
+                  <td>投柿性能：<span :style="{ color: getColor2('良') }">良</span></td>
+                </tr>
+                <tr>
+                  <td colspan="3">制动距离越短、制动力度越大、制动稳定性越高</td>
+                </tr>
+              </tbody>
+            </table>
+          </va-card-content>
+        </va-card>
+      </div>
+    </div>
+    <va-card>
+      <va-card-title style="justify-content: space-between">
+        <h1 style="font-size: 20px">危险参数预警</h1>
+      </va-card-title>
+      <va-card-content>
+        <p style="line-height: 1.5">
+          制动系统：制动片磨损度达到85%，<span style="color: #e42222">刹车盘出现裂纹和明显磨损</span
+          >，制动距离明显变长，需要立即更换零部件。<br />
+          悬挂系统：轮胎间隙不平衡，<span style="color: #e42222">车身左右倾斜</span
+          >，需更换悬挂系统零部件，以保证车辆行驶的稳定性和安全。<br />
+          轮胎压力：轮胎压力偏低，其中左前轮仅为正常压力的60%，将导致轮胎易于磨损、产生过多热量，并降低行驶平稳性。<br />
+          发动机故障：发动机排放黑烟且<span style="color: #ffd43a">噪声较大</span
+          >，考虑到该车龄已达10年，建议进行彻底维修，以免影响驾驶者的行车安全和乘客体验。<br />
+          燃油系统：
+          <span style="color: #e42222">泵失灵和燃油泄漏</span>油，应及时处理以避免火灾和环境污染等事故的发生。<br />
+          照明系统：车辆<span style="color: #ffd43a">灯光亮度不足</span
+          >，夜间行驶时对行车安全造成影响，应及时更换灯泡或整体更换照明系统。<br />
+          电气系统：方向指示器、车灯等<span style="color: #ffd43a">配件存在亮度不足、接触不良等问题</span
+          >，需要检查并更换相关部件以确保亮度充足、操作稳定。<br />
+          空调系统：空调制冷效果不彰，导致驾驶舱内高温难耐，影响驾驶安全。因此，建议进行空调系统完整性检查和维修。<br />
+          吸氧系统：<span style="color: #e42222">吸氧装置透氧碳化严重</span
+          >，无法正常起到增加车内氧气浓度的作用，需修理或更换。<br />
+          安全带：部分乘客座位安全带不存在或破损，其没有达到安全要求，需更换并加强推广安全意识
+        </p>
+      </va-card-content>
+    </va-card>
+
+    <va-card class="mt-3">
+      <va-card-title>
+        <h1 style="font-size: 20px">车辆信息查询</h1>
+      </va-card-title>
+      <va-card-content>
+        <div style="display: flex; align-items: center">
+          <va-input v-model="search1" placeholder="请输入驾驶员姓名" clearable style="margin: 10px 10px 10px 0">
+            <template #prependInner>
+              <va-icon class="icon-left input-icon" name="search" />
+            </template>
+          </va-input>
+
+          <va-input v-model="search2" placeholder="请输入驾驶员工号" clearable style="margin: 10px 10px 10px 0">
+            <template #prependInner>
+              <va-icon class="icon-left input-icon" name="search" />
+            </template>
+          </va-input>
+
+          <va-input v-model="search2" placeholder="请输入驾驶员车牌号" clearable style="margin: 10px 10px 10px 0">
+            <template #prependInner>
+              <va-icon class="icon-left input-icon" name="search" />
+            </template>
+          </va-input>
+
+          <div style="display: flex; align-items: center">
+            <div style="white-space: nowrap; margin-right: 5px">线路:</div>
+            <va-select v-model="busLinesModal" text-by="description" track-by="id" :options="busLinesOptions" />
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="va-table va-table--striped va-table--hoverable" style="width: 100%; color: #000">
+            <thead>
+              <tr>
+                <th>驾驶车辆编号</th>
+                <th>驾驶车牌号</th>
+                <th>工号</th>
+                <th>姓名</th>
+                <th>预警状态</th>
+                <th>数字画像总评分</th>
+                <th>实时监测</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr v-for="user in driverInfos" :key="user.id">
+                <td>{{ user.id }}</td>
+                <td>{{ user.carNum }}</td>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>
+                  <va-badge :text="user.status" :color="getStatusColor(user.status)" />
+                </td>
+                <td>
+                  <va-badge :text="user.score" :color="getScoreColor(user.score)" />
+                </td>
+                <td style="color: #1684fc; text-decoration: underline">查看</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="width: 100%; justify-content: center; display: flex; margin-top: 20px">
+          <va-pagination v-model="activeTable1" :visible-pages="10" :pages="99" />
+        </div>
+      </va-card-content>
+    </va-card>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -342,6 +553,16 @@
     } else if (scoreNum >= 65) {
       return 'warning'
     } else return 'danger'
+  }
+
+  function getColor2(str: string) {
+    if (['优'].includes(str)) {
+      return '#00FF7F'
+    } else if (['差', '危险'].includes(str)) {
+      return '#d40d52'
+    } else if (['中'].includes(str)) {
+      return '#FFD43A'
+    } else return '#fff'
   }
 
   const driverInfos = ref([
@@ -561,5 +782,16 @@
 
   .va-table td {
     text-align: center;
+  }
+
+  .va-table2 td {
+    text-align: center;
+    border: 1px solid #fff;
+    padding: 15px 0;
+  }
+
+  .vehcleimg {
+    width: 100%;
+    border-radius: 10px;
   }
 </style>
