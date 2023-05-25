@@ -38,6 +38,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../pages/admin/association.vue'),
       },
       {
+        name: 'examine',
+        path: 'examine',
+        component: () => import('../pages/admin/examine.vue'),
+      },
+      {
         name: 'feedback',
         path: 'feedback',
         component: () => import('../pages/admin/feedback.vue'),

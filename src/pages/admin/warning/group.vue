@@ -18,7 +18,6 @@
         <h1 style="font-size: 20px">驾驶员数据总览</h1>
       </va-card-title>
     </va-card>
-
     <div class="row">
       <div class="flex xs6" style="height: 100%">
         <va-card>
@@ -48,7 +47,6 @@
           </va-card-content>
         </va-card>
       </div>
-
       <div class="flex xs6" style="height: auto">
         <va-card style="height: 100%">
           <va-card-title style="font-size: 18px; color: #154ec1">近期驾驶行为统计</va-card-title>
@@ -73,7 +71,6 @@
         </va-card>
       </div>
     </div>
-
     <div class="row">
       <div class="flex xs6" style="height: auto">
         <va-card style="height: 100%">
@@ -115,7 +112,6 @@
         </va-card>
       </div>
     </div>
-
     <va-card>
       <va-card-title>
         <h1 style="font-size: 20px">驾驶员数据总览</h1>
@@ -144,7 +140,6 @@
             <va-select v-model="busLinesModal" text-by="description" track-by="id" :options="busLinesOptions" />
           </div>
         </div>
-
         <div class="table-wrapper">
           <table class="va-table va-table--striped va-table--hoverable" style="width: 100%; color: #000">
             <thead>
@@ -160,7 +155,6 @@
                 <th>实时监测</th>
               </tr>
             </thead>
-
             <tbody>
               <tr v-for="user in driverInfos" :key="user.id">
                 <td>{{ user.id }}</td>
@@ -193,13 +187,12 @@
     </va-card>
   </div>
 
-  <div v-if="tabValue == 0" class="mt-4">
+  <div v-else class="mt-4">
     <va-card>
       <va-card-title>
         <h1 style="font-size: 20px">车辆数据总览</h1>
       </va-card-title>
     </va-card>
-
     <div class="row">
       <div class="flex xs6" style="height: auto">
         <va-card style="height: 100%">
@@ -275,7 +268,6 @@
         </va-card>
       </div>
     </div>
-
     <va-card class="mt-2">
       <va-card-title style="justify-content: space-between">
         <h1 style="font-size: 20px">车辆总体数据统计</h1>
@@ -293,7 +285,6 @@
         </p>
       </va-card-content>
     </va-card>
-
     <va-card class="mt-3">
       <va-card-title style="justify-content: space-between">
         <h1 style="font-size: 20px">车辆历史数据总览查询</h1>
@@ -307,7 +298,6 @@
           </va-input>
           <va-button class="ml-3" color="info" style="border-radius: 5px; padding: 0 20px">查询</va-button>
         </div>
-
         <div class="table-wrapper">
           <table class="va-table va-table--striped va-table--hoverable" style="width: 100%; color: #000">
             <thead>
@@ -319,7 +309,6 @@
                 <th>备注</th>
               </tr>
             </thead>
-
             <tbody>
               <tr v-for="user in vehicleInfos" :key="user.id">
                 <td>{{ user.id }}</td>

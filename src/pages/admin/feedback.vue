@@ -70,7 +70,10 @@
   <va-card class="mt-4">
     <va-card-content>
       <div style="display: flex; font-size: 20px; align-items: center; width: 100%">
-        <va-icon name="ion-ios-arrow-back" style="color: #1e9fff; font-size: 25px; margin-right: 10px" />
+        <va-icon
+          name="ion-ios-arrow-back"
+          style="color: #1e9fff; font-size: 20px; margin-right: 10px; font-weight: bolder"
+        />
         <h1>当前选择</h1>
         <h1 style="color: #158de3; margin-left: 10px">推文评论-重庆公交-2023年5月10日</h1>
         <va-select

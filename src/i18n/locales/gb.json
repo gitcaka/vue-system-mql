@@ -300,6 +300,7 @@
     "group": "group",
     "person": "person",
     "realtime": "realtime",
+    "examine": "examine",
     "result": "result",
     "auth": "Auth",
     "rating": "Rating",
