@@ -413,7 +413,7 @@
   })
 </script>
 
-<style>
+<style scoped>
   .bgpic5 {
     position: absolute;
     top: 0;

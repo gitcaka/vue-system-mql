@@ -161,7 +161,7 @@
   const activeTable = ref(1)
 </script>
 
-<style>
+<style scoped>
   .iconDiv {
     border: #3d9209 5px solid;
     height: 120px;

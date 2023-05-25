@@ -825,7 +825,7 @@
   ])
 </script>
 
-<style>
+<style scoped>
   .active {
     background-color: #154ec1;
     color: #fff;

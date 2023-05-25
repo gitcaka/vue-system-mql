@@ -614,7 +614,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .custom-slide-class {
     width: 100%;
     height: 100%;

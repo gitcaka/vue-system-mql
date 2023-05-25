@@ -60,7 +60,7 @@
       </div>
 
       <div class="table-wrapper">
-        <table class="va-table va-table--striped va-table--hoverable" style="width: 100%; color: #000">
+        <table class="va-table va-table--striped va-table--hoverable" style="width: 100%">
           <thead>
             <tr>
               <th>工号</th>
@@ -327,7 +327,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .va-table th {
     text-align: center;
   }

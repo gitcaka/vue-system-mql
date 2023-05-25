@@ -651,7 +651,7 @@
   ])
 </script>
 
-<style>
+<style scoped>
   .tab {
     display: flex;
     justify-content: center;

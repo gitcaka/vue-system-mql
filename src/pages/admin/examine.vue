@@ -3,12 +3,11 @@
     <div class="flex xl8">
       <va-card style="height: 100%">
         <va-card-title style="justify-content: space-between">
-          <h1 style="font-size: 20px">乘客反馈</h1>
+          <h1 style="font-size: 20px">考核分析</h1>
         </va-card-title>
         <va-card-content>
           <h1 style="font-size: 14px; font-weight: normal">
-            系统通过整理乘客在公交驾驶员行车安全方面的意见以及建议，
-            更加直观、客观、全面描述公交驾驶员行车安全数字画像。
+            通过大数据技术建立公交驾驶员驾驶行为数据库，用实际行为的统计数据的为考核方案提供更精确的指导与服务。
           </h1>
         </va-card-content>
       </va-card>
@@ -88,7 +87,7 @@
       <div v-for="(item, index) in data1" :key="index" class="grid__container mt-2">
         <p style="width: 12%">{{ item.col1 }}</p>
         <p style="width: 10%; font-size: 20px">{{ item.col2 }}</p>
-        <img src="../../../../public/arrow4.png" style="height: 12px" />
+        <img src="../../../public/arrow4.png" style="height: 12px" />
         <p class="ml-5" style="width: 12%">{{ item.col3 }}</p>
         <p style="width: 10%; font-size: 20px">{{ item.col4 }}</p>
         <div style="margin-left: auto; text-decoration: underline; font-weight: bold; display: flex">
@@ -111,7 +110,7 @@
       <div v-for="(item, index) in data2" :key="index" class="grid__container mt-2">
         <p style="width: 12%">{{ item.col1 }}</p>
         <p style="width: 10%; font-size: 20px">{{ item.col2 }}</p>
-        <img src="../../../../public/arrow4.png" style="height: 12px" />
+        <img src="../../../public/arrow4.png" style="height: 12px" />
         <p class="ml-5" style="width: 12%">{{ item.col3 }}</p>
         <p style="width: 10%; font-size: 20px">{{ item.col4 }}</p>
         <div style="margin-left: auto; text-decoration: underline; font-weight: bold; display: flex">
@@ -244,7 +243,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .grid__container {
     min-height: 3rem;
     border-radius: 0.5rem;
