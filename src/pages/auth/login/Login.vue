@@ -58,7 +58,7 @@
     if (formReady.value) {
       axios.get('/users.json').then((response) => {
         const users = response.data
-        const user = users.find((user) => user.username == username.value)
+        const user = users.find((user: any) => user.username == username.value)
         if (user) {
           if (user.password == password.value) {
             return router.push({ name: 'main' })

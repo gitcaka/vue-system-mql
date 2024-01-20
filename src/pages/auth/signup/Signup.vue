@@ -69,7 +69,7 @@
     if (formReady.value) {
       axios.get('/users.json').then((response) => {
         const users = response.data
-        if (users.find((user) => user.username == username.value)) {
+        if (users.find((user: any) => user.username == username.value)) {
           usernameErrors.value = ['用户已存在']
         } else {
           users.push({ username: username.value, password: password.value })
