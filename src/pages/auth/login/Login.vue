@@ -2,11 +2,11 @@
   <div class="flex" style="display: flex">
     <form @submit.prevent="onsubmit">
       <va-input
-        v-model="email"
+        v-model="username"
         class="mb-3"
-        placeholder="管理员编号或手机号"
-        :error="!!emailErrors.length"
-        :error-messages="emailErrors"
+        placeholder="用户名"
+        :error="!!usernameErrors.length"
+        :error-messages="usernameErrors"
       />
 
       <va-input
@@ -31,7 +31,7 @@
     </form>
     <div style="display: flex; flex-direction: column; align-items: center; margin-left: 40px">
       <div>扫码登录</div>
-      <img class="qrcode" src="../../../../public/qrcode.png" alt="" />
+      <img class="qrcode" src="/qrcode.png" alt="" />
     </div>
   </div>
 </template>
@@ -40,24 +40,36 @@
   import { computed, ref } from 'vue'
   import { useRouter } from 'vue-router'
   import { useI18n } from 'vue-i18n'
+  import axios from 'axios'
   const { t } = useI18n()
 
-  const email = ref('')
+  const username = ref('')
   const password = ref('')
   const keepLoggedIn = ref(false)
-  const emailErrors = ref<string[]>([])
+  const usernameErrors = ref<string[]>([])
   const passwordErrors = ref<string[]>([])
   const router = useRouter()
 
-  const formReady = computed(() => !emailErrors.value.length && !passwordErrors.value.length)
+  const formReady = computed(() => !usernameErrors.value.length && !passwordErrors.value.length)
 
   function onsubmit() {
-    if (!formReady.value) return
-
-    emailErrors.value = email.value ? [] : ['请输入账号']
+    usernameErrors.value = username.value ? [] : ['请输入账号']
     passwordErrors.value = password.value ? [] : ['请输入密码']
-
-    router.push({ name: 'main' })
+    if (formReady.value) {
+      axios.get('/users.json').then((response) => {
+        const users = response.data
+        const user = users.find((user) => user.username == username.value)
+        if (user) {
+          if (user.password == password.value) {
+            return router.push({ name: 'main' })
+          } else {
+            passwordErrors.value = ['密码错误']
+          }
+        } else {
+          usernameErrors.value = ['无此账号']
+        }
+      })
+    }
   }
 </script>
 

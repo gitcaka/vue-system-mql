@@ -1,29 +1,11 @@
 <template>
   <form @submit.prevent="onsubmit()">
-    <!-- <va-input
-      v-model="email"
-      class="mb-3"
-      type="email"
-      :label="t('auth.email')"
-      :error="!!emailErrors.length"
-      :error-messages="emailErrors"
-    />
-
     <va-input
-      v-model="password"
+      v-model="username"
       class="mb-3"
-      type="password"
-      :label="t('auth.password')"
-      :error="!!passwordErrors.length"
-      :error-messages="passwordErrors"
-    /> -->
-
-    <va-input
-      v-model="email"
-      class="mb-3"
-      placeholder="手机号"
-      :error="!!emailErrors.length"
-      :error-messages="emailErrors"
+      placeholder="用户名"
+      :error="!!usernameErrors.length"
+      :error-messages="usernameErrors"
     />
 
     <va-input
@@ -64,26 +46,36 @@
   import { ref, computed } from 'vue'
   import { useRouter } from 'vue-router'
   import { useI18n } from 'vue-i18n'
+  import axios from 'axios'
   const { t } = useI18n()
 
-  const email = ref('')
+  const username = ref('')
   const password = ref('')
   const agreedToTerms = ref(false)
-  const emailErrors = ref<string[]>([])
+  const usernameErrors = ref<string[]>([])
   const passwordErrors = ref<string[]>([])
   const agreedToTermsErrors = ref<string[]>([])
+  const router = useRouter()
 
   const formReady = computed(() => {
-    return !(emailErrors.value.length || passwordErrors.value.length || agreedToTermsErrors.value.length)
+    return !(usernameErrors.value.length || passwordErrors.value.length || agreedToTermsErrors.value.length)
   })
 
   function onsubmit() {
-    if (!formReady.value) return
+    usernameErrors.value = username.value ? [] : ['请输入用户名']
+    passwordErrors.value = password.value ? [] : ['请输入密码']
+    agreedToTermsErrors.value = agreedToTerms.value ? [] : ['您必须同意使用条款才能继续']
 
-    emailErrors.value = email.value ? [] : ['Email is required']
-    passwordErrors.value = password.value ? [] : ['Password is required']
-    agreedToTermsErrors.value = agreedToTerms.value ? [] : ['You must agree to the terms of use to continue']
-
-    useRouter().push({ name: 'dashboard' })
+    if (formReady.value) {
+      axios.get('/users.json').then((response) => {
+        const users = response.data
+        if (users.find((user) => user.username == username.value)) {
+          usernameErrors.value = ['用户已存在']
+        } else {
+          users.push({ username: username.value, password: password.value })
+          router.push({ name: 'main' })
+        }
+      })
+    }
   }
 </script>

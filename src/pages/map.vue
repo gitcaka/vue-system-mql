@@ -46,7 +46,7 @@
       id: 0,
       location: [106.540205, 29.557017],
       content: '第一个点',
-      icon: 'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_yellow.png?sign=54aa5c90eb7d799fc33b36fe70e5172f&t=1684866019',
+      icon: '/point_yellow.png',
     },
   ])
 
@@ -63,18 +63,13 @@
       let lng = Math.random() * 0.4 + 106.35
       let lat = Math.random() * 0.18 + 29.48
       let content = '第' + id + '个点，经度：' + lng + '；纬度：' + lat
-      let icon =
-        'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_green.png?sign=720a70f0b04c3267ae886ea8204e26db&t=1684865993'
+      let icon = '/point_green.png'
       let m = Math.random()
       if (m < 0.7) {
-        icon =
-          'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_green.png?sign=720a70f0b04c3267ae886ea8204e26db&t=1684865993'
+        icon = '/point_green.png'
       } else if (m < 0.93) {
-        icon =
-          'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_yellow.png?sign=54aa5c90eb7d799fc33b36fe70e5172f&t=1684866019'
-      } else
-        icon =
-          'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_red.png?sign=c27cad03ad11e27346af83fa20368de0&t=1684865731'
+        icon = '/point_yellow.png'
+      } else icon = '/point_red.png'
       let mark = { id: id, location: [lng, lat], content: content, icon: icon }
       createMarks.push(mark)
     }
@@ -84,18 +79,13 @@
       let lng = Math.random() * 0.15 + 106.45
       let lat = Math.random() * 0.06 + 29.53
       let content = '第' + id + '个点，经度：' + lng + '；纬度：' + lat
-      let icon =
-        'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_green.png?sign=720a70f0b04c3267ae886ea8204e26db&t=1684865993'
+      let icon = '/point_green.png'
       let m = Math.random()
       if (m < 0.7) {
-        icon =
-          'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_green.png?sign=720a70f0b04c3267ae886ea8204e26db&t=1684865993'
+        icon = '/point_green.png'
       } else if (m < 0.93) {
-        icon =
-          'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_yellow.png?sign=54aa5c90eb7d799fc33b36fe70e5172f&t=1684866019'
-      } else
-        icon =
-          'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_red.png?sign=c27cad03ad11e27346af83fa20368de0&t=1684865731'
+        icon = '/point_yellow.png'
+      } else icon = '/point_red.png'
       let mark = { id: id, location: [lng, lat], content: content, icon: icon }
       createMarks.push(mark)
     }

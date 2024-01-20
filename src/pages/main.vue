@@ -1,8 +1,8 @@
 <template>
-  <div class="" style="background-color: #001a5a; height: 780px; width: 1480px">
+  <div class="all">
     <div class="top row">
-      <img class="bgpic5" src="../../public/bgpic5.png" alt="" />
-      <img class="bgpic6" src="../../public/bgpic6.png" alt="" />
+      <img class="bgpic5" src="/bgpic5.png" alt="" />
+      <img class="bgpic6" src="/bgpic6.png" alt="" />
       <div class="tleft row grid__container">
         <va-icon name="access_time" style="color: #1e9fff" />
         <p style="color: #fff; margin-left: 5px">{{ currentTime }} &nbsp; {{ dayOfWeek }}</p>
@@ -12,7 +12,6 @@
           <h1 class="title1">公交驾驶员行车安全数字画像系统</h1>
           <h1 class="title2">数据可视化平台</h1>
         </div>
-        <img class="bgpic3" src="../../public/bgpic3.png" alt="" />
       </div>
       <div class="row grid__container">
         <div class="tright">
@@ -31,7 +30,7 @@
             <p style="font-size: 18px; color: #fff">今日违规统计</p>
             <router-link :to="{ name: 'association' }">
               <div style="display: flex">
-                <p style="font-size: 18px; color: #71eef3">事故关联性分析</p>
+                <p class="linkText">事故关联性分析</p>
                 <va-icon name="chevron_right" style="color: #71eef3" />
               </div>
             </router-link>
@@ -48,12 +47,12 @@
             <p style="font-size: 18px; color: #fff">今日显著聚类预警</p>
             <router-link :to="{ name: 'label' }">
               <div style="display: flex">
-                <p style="font-size: 18px; color: #71eef3">司机画像聚类</p>
+                <p class="linkText">司机画像聚类</p>
                 <va-icon name="chevron_right" style="color: #71eef3" />
               </div>
             </router-link>
           </div>
-          <div style="display: flex; height: 135px; overflow: hidden">
+          <div style="display: flex; height: 135px">
             <va-card style="background-color: initial; box-shadow: none; position: relative; top: -80px">
               <va-card-content>
                 <va-chart :data="doughnutChartDataGenerated" type="doughnut" />
@@ -74,10 +73,9 @@
         <div class="blright blboxs">
           <div class="row" style="justify-content: space-between; width: 100%">
             <p style="font-size: 18px; color: #fff">公交实时监控</p>
-            <!-- <p style="font-size: 18px; color: #71eef3">详情</p> -->
             <router-link :to="{ name: 'realtime' }">
               <div style="display: flex">
-                <p style="font-size: 18px; color: #71eef3">详情</p>
+                <p class="linkText">详情</p>
                 <va-icon name="chevron_right" style="color: #71eef3" />
               </div>
             </router-link>
@@ -89,8 +87,8 @@
                 <p style="color: #71eef3">0452</p>
               </div>
               <div style="display: flex; flex-direction: column; width: 200px">
-                <video src="../../public/video1.mp4" autoplay muted loop style="margin-bottom: 5px"></video>
-                <video src="../../public/video2.mp4" autoplay muted loop></video>
+                <video src="/video1.mp4" autoplay muted loop style="margin-bottom: 5px"></video>
+                <video src="/video2.mp4" autoplay muted loop></video>
               </div>
             </div>
             <div style="display: flex; flex-direction: column">
@@ -158,7 +156,7 @@
               <p style="font-size: 18px; color: #fff">乘客反馈处理</p>
               <router-link :to="{ name: 'feedback' }">
                 <div style="display: flex">
-                  <p style="font-size: 18px; color: #71eef3">详情</p>
+                  <p class="linkText">详情</p>
                   <va-icon name="chevron_right" style="color: #71eef3" />
                 </div>
               </router-link>
@@ -175,7 +173,7 @@
               <p style="font-size: 18px; color: #fff">考核数据统计</p>
               <router-link :to="{ name: 'examine' }">
                 <div style="display: flex">
-                  <p style="font-size: 18px; color: #71eef3">考核方案优化</p>
+                  <p class="linkText">考核方案优化</p>
                   <va-icon name="chevron_right" style="color: #71eef3" />
                 </div>
               </router-link>
@@ -195,7 +193,7 @@
             <p style="font-size: 18px; color: #fff">司机当前状况及预警</p>
             <router-link :to="{ name: 'drivers' }">
               <div style="display: flex">
-                <p style="font-size: 18px; color: #71eef3">详情</p>
+                <p class="linkText">详情</p>
                 <va-icon name="chevron_right" style="color: #71eef3" />
               </div>
             </router-link>
@@ -230,7 +228,7 @@
             <p style="font-size: 18px; color: #fff">内部团队在编人数</p>
             <router-link :to="{ name: 'drivers' }">
               <div style="display: flex">
-                <p style="font-size: 18px; color: #71eef3">驾驶员档案管理</p>
+                <p class="linkText">驾驶员档案管理</p>
                 <va-icon name="chevron_right" style="color: #71eef3" />
               </div>
             </router-link>
@@ -239,14 +237,14 @@
             <va-card color="success" style="width: 48%">
               <va-card-content>
                 <p style="color: white; font-size: 14px">行驶中</p>
-                <h2 style="color: white; font-size: 41px">467</h2>
+                <h2 style="color: white; font-size: 41px">{{ Math.floor(Math.random() * 900) + 100 }}</h2>
                 <p style="color: white; font-size: 12px">月离职人数: 8 9.52%</p>
               </va-card-content>
             </va-card>
             <va-card color="info" style="width: 48%">
               <va-card-content>
                 <p style="color: white; font-size: 14px">总人数</p>
-                <h2 style="color: white; font-size: 41px">1239</h2>
+                <h2 style="color: white; font-size: 41px">{{ Math.floor(Math.random() * 9000) + 1000 }}</h2>
                 <p style="color: white; font-size: 12px">月离职人数: 8 10%</p>
               </va-card-content>
             </va-card>
@@ -327,10 +325,7 @@
     ],
   })
 
-  // const center = ref({ lng: 116.404, lat: 39.915 })
   const zoom = ref(13)
-  // const markerPoint = ref({ lng: 106.531869, lat: 29.594114 })
-
   const infoShow = ref(false)
   const infoContent = ref('')
   const infoPosition = ref()
@@ -374,7 +369,7 @@
       id: 0,
       location: [106.540205, 29.557017],
       content: '第一个点',
-      icon: 'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_yellow.png?sign=54aa5c90eb7d799fc33b36fe70e5172f&t=1684866019',
+      icon: '/point_yellow.png',
     },
   ])
 
@@ -403,18 +398,13 @@
       let lng = Math.random() * 0.2 + 106.45
       let lat = Math.random() * 0.1 + 29.5
       let content = '第' + id + '个点，经度：' + lng + '；纬度：' + lat
-      let icon =
-        'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_green.png?sign=720a70f0b04c3267ae886ea8204e26db&t=1684865993'
+      let icon = '/point_green.png'
       let m = Math.random()
       if (m < 0.6) {
-        icon =
-          'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_green.png?sign=720a70f0b04c3267ae886ea8204e26db&t=1684865993'
+        icon = '/point_green.png'
       } else if (m < 0.93) {
-        icon =
-          'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_yellow.png?sign=54aa5c90eb7d799fc33b36fe70e5172f&t=1684866019'
-      } else
-        icon =
-          'https://6361-caka-5gj3lc4k180a451d-1308169089.tcb.qcloud.la/point_red.png?sign=c27cad03ad11e27346af83fa20368de0&t=1684865731'
+        icon = '/point_yellow.png'
+      } else icon = '/point_red.png'
       let mark = { id: id, location: [lng, lat], content: content, icon: icon }
       createMarks.push(mark)
     }
@@ -423,6 +413,10 @@
 </script>
 
 <style scoped>
+  .all {
+    background-color: #001a5a;
+    min-width: 1300px;
+  }
   .bgpic5 {
     position: absolute;
     top: 0;
@@ -462,23 +456,11 @@
     text-align: center;
   }
 
-  .bgpic3 {
-    height: 80px;
-    width: auto;
-    margin-left: 10px;
-  }
-
   .tright {
     margin: 30px 0 0 150px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-  }
-
-  .titleright1 {
-    color: white;
-    margin-left: 20px;
-    margin: 0 0 5px 0;
   }
 
   .bottom {
@@ -633,5 +615,11 @@
     white-space: nowrap;
     margin-right: 5px;
     width: 90px;
+  }
+
+  .linkText {
+    font-size: 18px;
+    color: #71eef3;
+    text-decoration: underline;
   }
 </style>

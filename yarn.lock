@@ -976,6 +976,11 @@ base64-js@^1.1.2, base64-js@^1.3.0, base64-js@1.3.1:
   resolved "https://registry.npmjs.org/base64-js/-/base64-js-1.3.1.tgz"
   integrity sha512-mLQ4i2QO1ytvGWFWmcngKO//JXAQueZvwEKtjgQFM4jIK0kU+ytMfplL8j+n5mspOfjHwoAg+9yhb7BwAHm36g==
 
+bignumber.js@9.0.0:
+  version "9.0.0"
+  resolved "https://registry.npmjs.org/bignumber.js/-/bignumber.js-9.0.0.tgz"
+  integrity sha512-t/OYhhJ2SD+YGBQcjY8GzzDHEk9f3nerxjtfa6tlMXfe7frs/WozhvCNoGvpM0P3bNf3Gq5ZRMlGr5f3r4/N8A==
+
 binary-extensions@^2.0.0:
   version "2.2.0"
   resolved "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz"
@@ -2667,6 +2672,16 @@ murmurhash-js@^1.0.0:
   resolved "https://registry.npmjs.org/murmurhash-js/-/murmurhash-js-1.0.0.tgz"
   integrity sha512-TvmkNhkv8yct0SVBSy+o8wYzXjE4Zz3PCesbfs8HiCXXdcTuocApFv11UWlNFWKYsP2okqrhb7JNlSm9InBhIw==
 
+mysql@^2.18.1:
+  version "2.18.1"
+  resolved "https://registry.npmjs.org/mysql/-/mysql-2.18.1.tgz"
+  integrity sha512-Bca+gk2YWmqp2Uf6k5NFEurwY/0td0cpebAucFpY/3jhrwrVGuxU2uQFCHjU19SJfje0yQvi+rVWdq78hR5lig==
+  dependencies:
+    bignumber.js "9.0.0"
+    readable-stream "2.3.7"
+    safe-buffer "5.1.2"
+    sqlstring "2.3.1"
+
 nanoid@^3.3.4:
   version "3.3.4"
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.4.tgz"
@@ -2961,7 +2976,7 @@ quote-stream@^1.0.1:
     minimist "^1.1.3"
     through2 "^2.0.0"
 
-readable-stream@^2.0.2, readable-stream@^2.2.2, readable-stream@~2.3.3, readable-stream@~2.3.6:
+readable-stream@^2.0.2, readable-stream@^2.2.2, readable-stream@~2.3.3, readable-stream@~2.3.6, readable-stream@2.3.7:
   version "2.3.7"
   resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-2.3.7.tgz"
   integrity sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw==
@@ -3087,7 +3102,7 @@ rxjs@^7.5.5:
   dependencies:
     tslib "^2.1.0"
 
-safe-buffer@~5.1.0, safe-buffer@~5.1.1:
+safe-buffer@~5.1.0, safe-buffer@~5.1.1, safe-buffer@5.1.2:
   version "5.1.2"
   resolved "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.2.tgz"
   integrity sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
@@ -3224,6 +3239,11 @@ sourcemap-codec@^1.4.1, sourcemap-codec@^1.4.8:
   version "1.4.8"
   resolved "https://registry.npmjs.org/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz"
   integrity sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==
+
+sqlstring@2.3.1:
+  version "2.3.1"
+  resolved "https://registry.npmjs.org/sqlstring/-/sqlstring-2.3.1.tgz"
+  integrity sha512-ooAzh/7dxIG5+uDik1z/Rd1vli0+38izZhGzSa34FwR7IbelPWCCKSNIl8jlL/F7ERvy8CB2jNeM1E9i9mXMAQ==
 
 ssf@~0.11.2:
   version "0.11.2"
