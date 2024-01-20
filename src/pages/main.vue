@@ -1,8 +1,8 @@
 <template>
   <div class="all">
     <div class="top row">
-      <img class="bgpic5" src="/bgpic5.png" alt="" />
-      <img class="bgpic6" src="/bgpic6.png" alt="" />
+      <img class="bgpic5" src="/bgpic5.png" />
+      <img class="bgpic6" src="/bgpic6.png" />
       <div class="tleft row grid__container">
         <va-icon name="access_time" style="color: #1e9fff" />
         <p style="color: #fff; margin-left: 5px">{{ currentTime }} &nbsp; {{ dayOfWeek }}</p>
@@ -52,7 +52,7 @@
               </div>
             </router-link>
           </div>
-          <div style="display: flex; height: 135px">
+          <div style="display: flex; height: 140px; overflow: hidden">
             <va-card style="background-color: initial; box-shadow: none; position: relative; top: -80px">
               <va-card-content>
                 <va-chart :data="doughnutChartDataGenerated" type="doughnut" />
@@ -267,7 +267,6 @@
     currentTime.value = new Date().toLocaleString()
   }
   const dayOfWeek = new Intl.DateTimeFormat('zh-CN', { weekday: 'long' }).format(new Date())
-  // const cityName = ref('')
   const wendu = ref('')
   const tianqi = ref('')
   const tianqiIcon = ref('')
@@ -382,7 +381,6 @@
       data: qs.stringify({ key: '89fd8002d6d9b3ba7c3c98748efa2779', city: '重庆市', type: '1' }),
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     }).then((res) => {
-      // console.log(res.data.result)
       wendu.value = res.data.result.lowest + ' - ' + res.data.result.highest
       tianqi.value = res.data.result.weather
       if (tianqi.value.indexOf('云') !== -1) {
@@ -461,6 +459,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+  }
+
+  .titleright1 {
+    color: white;
+    margin-left: 20px;
+    margin: 0 0 5px 0;
   }
 
   .bottom {

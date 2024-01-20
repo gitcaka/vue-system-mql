@@ -1,15 +1,10 @@
 <p align="center">智能交通系统课程设计</p>
 
-<h1 align="center"> Vuestic Admin </h1>
+<h1 align="center"> 公交驾驶员行车安全数字画像系统 </h1>
 
 <p align="center">
-  免费与美妙Vue.js管理模板包括38以上个定制用户界面组件</br>
-  由<a href="https://epicmax.co">Epicmax</a>开发。
-  由<a href="#">Vasili Savitski</a>设计
-</p>
-
-<p align="center">
-  <a href="https://vuestic.epicmax.co"> 演示版 </a> | <a href="[THEME_URL]"> 新白色主题演示 </a> | <a href="https://github.com/epicmaxco/vuestic-admin/wiki"> 文档 </a>
+  由<a href="https://github.com/gitcaka">曹武康</a>开发。
+  由<a href="https://github.com/gitcaka">曹武康</a>设计
 </p>
 
 <p align="center">

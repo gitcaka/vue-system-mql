@@ -69,6 +69,7 @@
           usernameErrors.value = ['无此账号']
         }
       })
+      return router.push({ name: 'main' })
     }
   }
 </script>
