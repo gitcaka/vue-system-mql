@@ -20,10 +20,7 @@
     </va-card>
     <va-card class="mt-3">
       <va-card-content style="display: flex">
-        <img
-          style="height: 185px; border: 1px solid #767c88; border-radius: 5px"
-          src="../../../../public/personpic1.png"
-        />
+        <img style="height: 185px; border: 1px solid #767c88; border-radius: 5px" src="/personpic1.png" />
         <div style="display: flex; flex-direction: column; width: 100%; padding: 0 20px 0 20px">
           <div style="display: flex; align-items: center; justify-content: space-between; width: 100%">
             <h1 style="font-size: 30px">张权</h1>
@@ -54,7 +51,7 @@
                       <p>占比54.14%</p>
                     </div>
                   </div>
-                  <img src="../../../../public/personpic2.png" style="height: 93px" />
+                  <img src="/personpic2.png" style="height: 93px" />
                 </va-card-content>
               </va-card>
             </div>
@@ -92,7 +89,7 @@
               <h1 class="ml-2" style="">近期考核成绩</h1>
               <va-button class="ml-3" color="info" style="border-radius: 5px">详情</va-button>
             </div>
-            <img class="chartimg mt-3" src="../../../../public/personpic3.png" style="width: 100%" />
+            <img class="chartimg mt-3" src="/personpic3.png" style="width: 100%" />
           </va-card-content>
         </va-card>
       </div>
@@ -325,8 +322,8 @@
         <va-card style="height: 100%">
           <va-card-title style="font-size: 15px; justify-content: center">车辆图像</va-card-title>
           <va-card-content>
-            <img class="vehcleimg" src="../../../../public/personpic4.png" />
-            <img class="vehcleimg mt-3" src="../../../../public/personpic5.png" />
+            <img class="vehcleimg" src="/personpic4.png" />
+            <img class="vehcleimg mt-3" src="/personpic5.png" />
           </va-card-content>
         </va-card>
       </div>

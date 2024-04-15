@@ -3,9 +3,11 @@
 <h1 align="center"> 公交驾驶员行车安全数字画像系统 </h1>
 
 <p align="center">
-  由<a href="https://github.com/gitcaka">曹武康</a>开发。
-  由<a href="https://github.com/gitcaka">曹武康</a>设计
+  由<a href="https://github.com/gitcaka">曹武康</a>开发
+  由<a href="https://github.com/gitcaka">曹武康</a>设计  
 </p>
+
+<p align="center">项目已上线：<a href="https://resplendent-fudge-8e455a.netlify.app">https://resplendent-fudge-8e455a.netlify.app</a></p>
 
 ## 安装
 

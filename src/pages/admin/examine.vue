@@ -87,7 +87,7 @@
       <div v-for="(item, index) in data1" :key="index" class="grid__container mt-2">
         <p style="width: 12%">{{ item.col1 }}</p>
         <p style="width: 10%; font-size: 20px">{{ item.col2 }}</p>
-        <img src="../../../public/arrow4.png" style="height: 12px" />
+        <img src="/arrow4.png" style="height: 12px" />
         <p class="ml-5" style="width: 12%">{{ item.col3 }}</p>
         <p style="width: 10%; font-size: 20px">{{ item.col4 }}</p>
         <div style="margin-left: auto; text-decoration: underline; font-weight: bold; display: flex">
@@ -110,7 +110,7 @@
       <div v-for="(item, index) in data2" :key="index" class="grid__container mt-2">
         <p style="width: 12%">{{ item.col1 }}</p>
         <p style="width: 10%; font-size: 20px">{{ item.col2 }}</p>
-        <img src="../../../public/arrow4.png" style="height: 12px" />
+        <img src="/arrow4.png" style="height: 12px" />
         <p class="ml-5" style="width: 12%">{{ item.col3 }}</p>
         <p style="width: 10%; font-size: 20px">{{ item.col4 }}</p>
         <div style="margin-left: auto; text-decoration: underline; font-weight: bold; display: flex">

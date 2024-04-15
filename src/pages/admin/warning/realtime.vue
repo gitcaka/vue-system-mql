@@ -16,32 +16,17 @@
     <va-card class="mt-3">
       <va-card-content style="display: flex; align-items: flex-end">
         <div style="text-align: center">
-          <img
-            style="height: 185px; border: 1px solid #767c88; border-radius: 5px"
-            src="../../../../public/personpic1.png"
-          />
+          <img style="height: 185px; border: 1px solid #767c88; border-radius: 5px" src="/personpic1.png" />
           <h1 class="mt-1" style="font-size: 30px">张权</h1>
         </div>
         <div style="display: flex; width: 100%">
           <div class="xs6" style="display: flex; flex-direction: column; align-items: center; width: 50%">
             <va-chip class="mb-2" shadow color="success" style="">监控视角</va-chip>
-            <video
-              src="../../../../public/video1.mp4"
-              autoplay
-              muted
-              loop
-              style="width: 80%; border-radius: 5px"
-            ></video>
+            <video src="/video1.mp4" autoplay muted loop style="width: 80%; border-radius: 5px"></video>
           </div>
           <div class="xs6" style="display: flex; flex-direction: column; align-items: center; width: 50%">
             <va-chip class="mb-2" shadow color="success" style="">第一视角</va-chip>
-            <video
-              src="../../../../public/video2.mp4"
-              autoplay
-              muted
-              loop
-              style="width: 80%; border-radius: 5px"
-            ></video>
+            <video src="/video2.mp4" autoplay muted loop style="width: 80%; border-radius: 5px"></video>
           </div>
         </div>
       </va-card-content>
@@ -446,13 +431,7 @@
             <h1 style="font-size: 20px">第一视角</h1>
           </va-card-title>
           <va-card-content>
-            <video
-              src="../../../../public/video1.mp4"
-              autoplay
-              muted
-              loop
-              style="width: 100%; border-radius: 5px"
-            ></video>
+            <video src="/video1.mp4" autoplay muted loop style="width: 100%; border-radius: 5px"></video>
           </va-card-content>
         </va-card>
       </div>
@@ -462,13 +441,7 @@
             <h1 style="font-size: 20px">监控视角</h1>
           </va-card-title>
           <va-card-content>
-            <video
-              src="../../../../public/video2.mp4"
-              autoplay
-              muted
-              loop
-              style="width: 100%; border-radius: 5px"
-            ></video>
+            <video src="/video2.mp4" autoplay muted loop style="width: 100%; border-radius: 5px"></video>
           </va-card-content>
         </va-card>
       </div>
@@ -480,7 +453,7 @@
             <h1 style="font-size: 20px">行驶速度曲线</h1>
           </va-card-title>
           <va-card-content>
-            <img class="chartimg" src="../../../../public/realtimepic1.png" />
+            <img class="chartimg" src="/realtimepic1.png" />
           </va-card-content>
         </va-card>
       </div>
@@ -490,7 +463,7 @@
             <h1 style="font-size: 20px">行驶加速度曲线</h1>
           </va-card-title>
           <va-card-content>
-            <img class="chartimg" src="../../../../public/realtimepic2.png" />
+            <img class="chartimg" src="/realtimepic2.png" />
           </va-card-content>
         </va-card>
       </div>
@@ -500,7 +473,7 @@
             <h1 style="font-size: 20px">车辆颠簸状态</h1>
           </va-card-title>
           <va-card-content>
-            <img class="chartimg" src="../../../../public/realtimepic3.png" />
+            <img class="chartimg" src="/realtimepic3.png" />
           </va-card-content>
         </va-card>
       </div>

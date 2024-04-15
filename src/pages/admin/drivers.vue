@@ -12,21 +12,21 @@
     <div class="flex">
       <va-card>
         <va-card-content>
-          <img src="../../../public/drivers_pic1.png" style="height: 200px" />
+          <img src="/drivers_pic1.png" style="height: 200px" />
         </va-card-content>
       </va-card>
     </div>
     <div class="flex">
       <va-card>
         <va-card-content>
-          <img src="../../../public/drivers_pic2.png" style="height: 200px" />
+          <img src="/drivers_pic2.png" style="height: 200px" />
         </va-card-content>
       </va-card>
     </div>
     <div class="flex">
       <va-card>
         <va-card-content>
-          <img src="../../../public/drivers_pic3.png" style="height: 200px" />
+          <img src="/drivers_pic3.png" style="height: 200px" />
         </va-card-content>
       </va-card>
     </div>

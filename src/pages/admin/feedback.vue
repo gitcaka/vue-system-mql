@@ -46,7 +46,7 @@
       <div class="row" style="align-items: center">
         <div class="flex xs5" style="border-right: 1px solid #9ba4b4">
           <div class="va-h6 ma-0 row" style="align-items: center; justify-content: center">
-            <img class="ma-2" src="../../../public/weibo.png" style="height: 48px; width: 48px" />
+            <img class="ma-2" src="/weibo.png" style="height: 48px; width: 48px" />
             <p>新浪微博</p>
           </div>
           <p class="va-text-center">
@@ -54,14 +54,14 @@
           </p>
         </div>
         <div class="xs7" style="display: flex; align-items: center; padding-left: 20px">
-          <img class="ma-3" src="../../../public/zhihu.png" style="height: 48px; width: 48p" />
-          <img class="ma-3" src="../../../public/douyin.png" style="height: 48px; width: 48px" />
-          <img class="ma-3" src="../../../public/blibli.png" style="height: 48px; width: 48px" />
-          <img class="ma-3" src="../../../public/txweibo.png" style="height: 48px; width: 48px" />
-          <img class="ma-3" src="../../../public/tieba.png" style="height: 48px; width: 48px" />
-          <img class="ma-3" src="../../../public/wxxiaochenxu.png" style="height: 48px; width: 48px" />
-          <img class="ma-3" src="../../../public/pinglun.png" style="height: 48px; width: 48px" />
-          <img class="ma-3" src="../../../public/more.png" style="height: 40px; width: 40px" />
+          <img class="ma-3" src="/zhihu.png" style="height: 48px; width: 48p" />
+          <img class="ma-3" src="/douyin.png" style="height: 48px; width: 48px" />
+          <img class="ma-3" src="/blibli.png" style="height: 48px; width: 48px" />
+          <img class="ma-3" src="/txweibo.png" style="height: 48px; width: 48px" />
+          <img class="ma-3" src="/tieba.png" style="height: 48px; width: 48px" />
+          <img class="ma-3" src="/wxxiaochenxu.png" style="height: 48px; width: 48px" />
+          <img class="ma-3" src="/pinglun.png" style="height: 48px; width: 48px" />
+          <img class="ma-3" src="/more.png" style="height: 40px; width: 40px" />
         </div>
       </div>
     </va-card-content>
@@ -99,7 +99,7 @@
           <h1 style="color: rgb(21, 78, 193)">词云图</h1>
         </va-card-title>
         <va-card-content>
-          <img src="../../../public/swiper1.jpg" style="width: 100%" />
+          <img src="/swiper1.jpg" style="width: 100%" />
           <!-- <Swiper :params="swiperOptions" style="width: 100%; overflow: hidden">
             <SwiperSlide v-for="(slide, index) in swiperSlides" :key="index" style="">
               <img :src="slide.image" style="width: 100%" />
@@ -198,9 +198,9 @@
         </va-card-title>
         <va-card-content style="align-items: center; text-align: center">
           <h1 class="va-h6 ma-3">2022年平台受理乘客投诉渠道分布图</h1>
-          <img class="chartimg" src="../../../public/feedbackpic1.png" />
+          <img class="chartimg" src="/feedbackpic1.png" />
           <h1 class="va-h6 ma-3" style="border-top: 1px solid gray; padding-top: 10px">2022年受理投诉统计图（季度）</h1>
-          <img class="chartimg" src="../../../public/feedbackpic2.png" />
+          <img class="chartimg" src="/feedbackpic2.png" />
           <div style="width: 100%; justify-content: center; display: flex; margin-top: 20px">
             <va-pagination v-model="activePage1" :visible-pages="4" :pages="20" />
           </div>
@@ -216,9 +216,9 @@
         <va-card-content style="text-align: center">
           <div>
             <h1 class="va-h6 ma-3">2022年度司机行车安全服务质量影响因素统计表</h1>
-            <img src="../../../public/feedbackpic3.png" style="width: 100%" />
+            <img src="/feedbackpic3.png" style="width: 100%" />
             <h1 class="va-h6 ma-3">2022年司机优质服务记录</h1>
-            <img class="feedback4" src="../../../public/feedbackpic4.png" />
+            <img class="feedback4" src="/feedbackpic4.png" />
           </div>
           <div style="width: 100%; justify-content: center; display: flex; position: absolute; bottom: 20px">
             <va-pagination v-model="activePage2" :visible-pages="4" :pages="20" />
@@ -351,7 +351,7 @@
   //     },
   //     loop: true,
   //   })
-  // const swiperSlides = ref([{ image: '../../../public/swiper1.png' }, { image: '../../../public/swiper2.png' }])
+  // const swiperSlides = ref([{ image: '/swiper1.png' }, { image: '/swiper2.png' }])
   const comments = ref([
     {
       id: 1,

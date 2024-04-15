@@ -18,7 +18,7 @@
         <va-card-content>
           <div v-for="(item, index) in data1" :key="index" class="grid__container mt-2">
             <p style="width: 20%">{{ item.title1 }}</p>
-            <img src="../../../public/double_arrow.png" />
+            <img src="/double_arrow.png" />
             <p style="width: 25%">{{ item.title2 }}</p>
             <p class="ml-3">>></p>
             <p class="ml-3">{{ item.precent }}</p>
@@ -35,7 +35,7 @@
         <va-card-content>
           <div v-for="(item, index) in data2" :key="index" class="grid__container mt-2">
             <p style="width: 15%">{{ item.title1 }}</p>
-            <img src="../../../public/arrow3.png" style="height: 12px" />
+            <img src="/arrow3.png" style="height: 12px" />
             <p style="width: 12%">{{ item.title2 }}</p>
             <p class="ml-3">{{ item.precent }}</p>
             <p class="ml-3">{{ item.score }}</p>
@@ -55,7 +55,7 @@
         <va-card-content>
           <div v-for="(item, index) in data3" :key="index" class="grid__container mt-2">
             <p style="width: 15%">{{ item.title1 }}</p>
-            <img src="../../../public/arrow4.png" style="height: 12px" />
+            <img src="/arrow4.png" style="height: 12px" />
             <p class="ml-3" style="width: 25%">{{ item.title2 }}</p>
             <p class="ml-3">>></p>
             <p class="ml-3">{{ item.precent }}</p>

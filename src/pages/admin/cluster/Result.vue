@@ -90,14 +90,14 @@
     <div class="flex xs6" style="height: auto">
       <va-card style="height: 100%">
         <va-card-title style="font-size: 15px">不同年龄层关于身体健康与平稳性异常的分布 </va-card-title>
-        <va-card-content> <img class="chartimg" src="../../../../public/resultpic1.png" /> </va-card-content>
+        <va-card-content> <img class="chartimg" src="/resultpic1.png" /> </va-card-content>
       </va-card>
     </div>
     <div class="flex xs6" style="height: 100%">
       <va-card>
         <va-card-title style="font-size: 15px">35~40岁人群关于身体健康与平稳性异常的分布 </va-card-title>
         <va-card-content>
-          <img class="chartimg" src="../../../../public/resultpic2.png" />
+          <img class="chartimg" src="/resultpic2.png" />
         </va-card-content>
       </va-card>
     </div>
@@ -105,7 +105,7 @@
       <va-card>
         <va-card-title style="font-size: 15px">身体健康异常评价分数数据分布 </va-card-title>
         <va-card-content>
-          <img class="chartimg" src="../../../../public/resultpic3.png" />
+          <img class="chartimg" src="/resultpic3.png" />
         </va-card-content>
       </va-card>
     </div>
@@ -113,7 +113,7 @@
       <va-card>
         <va-card-title style="font-size: 15px">平稳性异常评价分数数据分布 </va-card-title>
         <va-card-content>
-          <img class="chartimg" src="../../../../public/resultpic4.png" />
+          <img class="chartimg" src="/resultpic4.png" />
         </va-card-content>
       </va-card>
     </div>

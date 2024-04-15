@@ -27,10 +27,10 @@
           <va-card-content style="height: 100%">
             <div style="display: flex">
               <div style="display: flex; flex-direction: column; width: 50%">
-                <img class="chartimg" src="../../../../public/grouppic1.png" />
+                <img class="chartimg" src="/grouppic1.png" />
                 <div>
                   <p class="mt-3 mb-2" style="font-size: 15px; font-weight: bold">近期身体素质中及以下人数</p>
-                  <img class="chartimg" src="../../../../public/grouppic2.png" />
+                  <img class="chartimg" src="/grouppic2.png" />
                 </div>
               </div>
               <div style="width: 50%; padding: 0 0 0 10px">
@@ -53,9 +53,9 @@
           <va-card-content>
             <div style="display: flex">
               <div style="display: flex; flex-direction: column; width: 50%">
-                <img class="chartimg" src="../../../../public/grouppic3.png" />
+                <img class="chartimg" src="/grouppic3.png" />
                 <p class="mt-3 mb-2" style="font-size: 15px; font-weight: bold">近期身体素质中及以下人数</p>
-                <img class="chartimg" src="../../../../public/grouppic4.png" />
+                <img class="chartimg" src="/grouppic4.png" />
               </div>
               <div style="width: 50%; padding: 0 0 0 10px">
                 <p style="line-height: 1.6">
@@ -78,9 +78,9 @@
           <va-card-content>
             <div style="display: flex">
               <div style="display: flex; flex-direction: column; width: 50%">
-                <img class="chartimg" src="../../../../public/grouppic5.png" />
+                <img class="chartimg" src="/grouppic5.png" />
                 <p class="mt-3 mb-2" style="font-size: 15px; font-weight: bold">近期驾驶员技能较差人数</p>
-                <img class="chartimg" src="../../../../public/grouppic6.png" />
+                <img class="chartimg" src="/grouppic6.png" />
               </div>
               <div style="width: 50%; padding: 0 0 0 10px">
                 <p style="line-height: 1.6">
@@ -198,7 +198,7 @@
         <va-card style="height: 100%">
           <va-card-title style="font-size: 15px">车辆检修</va-card-title>
           <va-card-content>
-            <img class="chartimg" src="../../../../public/grouppic7.png" />
+            <img class="chartimg" src="/grouppic7.png" />
           </va-card-content>
           <div style="width: 100%; display: flex">
             <va-button class="mr-3" color="info" style="border-radius: 5px; margin-left: auto">更多</va-button>
@@ -209,7 +209,7 @@
         <va-card>
           <va-card-title style="font-size: 15px">车辆故障统计</va-card-title>
           <va-card-content style="display: flex; justify-content: center; flex-direction: column; align-items: center">
-            <img class="chartimg" style="width: 70%" src="../../../../public/grouppic8.png" />
+            <img class="chartimg" style="width: 70%" src="/grouppic8.png" />
             <div class="table-wrapper mt-3" style="width: 100%">
               <table class="va-table va-table--striped va-table--hoverable" style="width: 100%">
                 <thead>
@@ -242,7 +242,7 @@
         <va-card>
           <va-card-title style="font-size: 15px">车辆运行载客统计</va-card-title>
           <va-card-content>
-            <img class="chartimg" src="../../../../public/grouppic9.png" />
+            <img class="chartimg" src="/grouppic9.png" />
           </va-card-content>
           <div style="width: 100%; display: flex">
             <va-button class="mr-3 mb-3" color="info" style="border-radius: 5px; margin-left: auto">更多</va-button>
@@ -255,7 +255,7 @@
           <va-card-content>
             <div v-for="(item, index) in data1" :key="index" class="grid__container mt-2">
               <p style="width: 20%">{{ item.title1 }}</p>
-              <img src="../../../../public/double_arrow.png" />
+              <img src="/double_arrow.png" />
               <p style="width: 25%">{{ item.title2 }}</p>
               <p class="ml-3">》</p>
               <p class="ml-3">{{ item.precent }}</p>
